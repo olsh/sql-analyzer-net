@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sql.Analyzer", "Sql.Analyzer\Sql.Analyzer\Sql.Analyzer.csproj", "{D0D603A9-CD83-4437-AEAE-E393704BEE67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sql.Analyzer", "Sql.Analyzer\Sql.Analyzer\Sql.Analyzer.csproj", "{D0D603A9-CD83-4437-AEAE-E393704BEE67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sql.Analyzer.Test", "Sql.Analyzer\Sql.Analyzer.Test\Sql.Analyzer.Test.csproj", "{400F3C22-A769-416F-82BE-F38ED4A935D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sql.Analyzer.Test", "Sql.Analyzer\Sql.Analyzer.Test\Sql.Analyzer.Test.csproj", "{400F3C22-A769-416F-82BE-F38ED4A935D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sql.Analyzer.Vsix", "Sql.Analyzer\Sql.Analyzer.Vsix\Sql.Analyzer.Vsix.csproj", "{DE372B5D-B2D2-41B1-A88F-A3D7B651FF29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8677C437-092B-4C06-8E9C-DD32EE0F4109}"
+	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
+		..\build.cake = ..\build.cake
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

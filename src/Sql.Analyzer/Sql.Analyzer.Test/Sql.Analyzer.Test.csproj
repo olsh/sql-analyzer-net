@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="TestData\InlineSqlWithStringParameterTestData.cs" />
+    <Compile Remove="TestData\InlineSqlWithDbStringArgumentTestData.cs" />
+    <Compile Remove="TestData\InlineSqlWithStringArgumentTestData.cs" />
+    <Compile Remove="TestData\StoredProcedureWithStringArgumentTestData.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="TestData\InlineSqlWithStringParameterTestData.cs" />
+    <EmbeddedResource Include="TestData\InlineSqlWithDbStringArgumentTestData.cs" />
+    <EmbeddedResource Include="TestData\InlineSqlWithStringArgumentTestData.cs" />
+    <EmbeddedResource Include="TestData\StoredProcedureWithStringArgumentTestData.cs" />
   </ItemGroup>
 
   <ItemGroup>

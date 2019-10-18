@@ -1,11 +1,10 @@
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using TestHelper;
-using Sql.Analyzer;
+
 using Sql.Analyzer.Test.Helpers;
+
+using TestHelper;
 
 namespace Sql.Analyzer.Test
 {
@@ -21,19 +20,35 @@ namespace Sql.Analyzer.Test
         }
 
         [TestMethod]
-        public void AwaitStringGetAsync_AnalyzerTriggered()
+        public void InlineSqlWithStringArgument_AnalyzerTriggered()
         {
-            var code = EmbeddedResourceHelper.ReadTestData("InlineSqlWithStringParameterTestData.cs");
+            var code = EmbeddedResourceHelper.ReadTestData("InlineSqlWithStringArgumentTestData.cs");
 
             var expected = new DiagnosticResult
                                {
                                    Id = DapperStringParameterAnalyzer.DiagnosticId,
-                                   Message = string.Format(DapperStringParameterAnalyzer.MessageFormat, "StringGetAsync"),
+                                   Message = DapperStringParameterAnalyzer.MessageFormat,
                                    Severity = DiagnosticSeverity.Warning,
-                                   Locations = new[] { new DiagnosticResultLocation("Test0.cs", 12, 25) }
+                                   Locations = new[] { new DiagnosticResultLocation("Test0.cs", 13, 46) }
                                };
 
             VerifyCSharpDiagnostic(code, expected);
+        }
+
+        [TestMethod]
+        public void InlineSqlWithoutStringArgument_NotTriggered()
+        {
+            var code = EmbeddedResourceHelper.ReadTestData("InlineSqlWithDbStringArgumentTestData.cs");
+
+            VerifyCSharpDiagnostic(code);
+        }
+
+        [TestMethod]
+        public void StoredProcedureWithStringArgument_NotTriggered()
+        {
+            var code = EmbeddedResourceHelper.ReadTestData("StoredProcedureWithStringArgumentTestData.cs");
+
+            VerifyCSharpDiagnostic(code);
         }
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
