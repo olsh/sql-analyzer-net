@@ -60,6 +60,14 @@ namespace Sql.Analyzer.Test
             VerifyCSharpDiagnostic(code, expected);
         }
 
+        [TestMethod]
+        public void InlineSqlDeclaredVariableParameters_NotTriggered()
+        {
+            var code = EmbeddedResourceHelper.ReadTestData("InlineSqlDeclaredVariableParameters.cs");
+
+            VerifyCSharpDiagnostic(code);
+        }
+
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
             return new DapperParametersMatchingAnalyzer();

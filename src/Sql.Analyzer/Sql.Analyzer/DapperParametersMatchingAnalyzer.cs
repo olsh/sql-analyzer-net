@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -9,6 +10,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
 using Sql.Analyzer.Extensions;
+using Sql.Analyzer.Parsers;
 
 namespace Sql.Analyzer
 {
@@ -26,8 +28,6 @@ namespace Sql.Analyzer
         private static readonly string Description = "Parameters mismatching";
 
         private static readonly string Title = "Parameters mismatching";
-
-        private static readonly Regex SqlParameterRegex = new Regex(@"@(?<variable>\w+)", RegexOptions.Compiled);
 
         private static readonly DiagnosticDescriptor CsharpArgumentNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,
@@ -71,8 +71,8 @@ namespace Sql.Analyzer
             SyntaxNodeAnalysisContext context,
             InvocationExpressionSyntax invocationExpressionSyntax)
         {
-            List<string> sqlVariables = new List<string>();
-            List<string> sharpParameters = null;
+            ICollection<string> sqlVariables = null;
+            ICollection<string> sharpParameters = null;
             foreach (var argument in invocationExpressionSyntax.ArgumentList.Arguments)
             {
                 var parameter = argument.DetermineParameter(context.SemanticModel);
@@ -86,11 +86,7 @@ namespace Sql.Analyzer
                         return;
                     }
 
-                    var matches = SqlParameterRegex.Matches(sourceText);
-                    foreach (Match match in matches)
-                    {
-                        sqlVariables.Add(match.Groups["variable"].Value);
-                    }
+                    sqlVariables = SqlParser.FindParameters(sourceText);
 
                     continue;
                 }
@@ -102,12 +98,12 @@ namespace Sql.Analyzer
                 }
             }
 
-            if (sharpParameters == null)
+            if (sharpParameters == null || sqlVariables == null)
             {
                 return;
             }
 
-            foreach (var notFoundArgument in sqlVariables.Except(sharpParameters))
+            foreach (var notFoundArgument in sqlVariables.Except(sharpParameters, StringComparer.InvariantCultureIgnoreCase))
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -116,7 +112,7 @@ namespace Sql.Analyzer
                         notFoundArgument));
             }
 
-            foreach (var notFoundVariable in sharpParameters.Except(sqlVariables))
+            foreach (var notFoundVariable in sharpParameters.Except(sqlVariables, StringComparer.InvariantCultureIgnoreCase))
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(

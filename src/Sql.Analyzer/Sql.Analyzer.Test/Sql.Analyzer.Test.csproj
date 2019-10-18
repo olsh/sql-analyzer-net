@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestData\InlineSqlDeclaredVariableParameters.cs" />
     <Compile Remove="TestData\InlineSqlUnmatchedParameters.cs" />
     <Compile Remove="TestData\InlineSqlUnmatchedSqlVariable.cs" />
     <Compile Remove="TestData\InlineSqlWithConstUnmatchedParameters.cs" />
@@ -14,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="TestData\InlineSqlDeclaredVariableParameters.cs" />
     <EmbeddedResource Include="TestData\InlineSqlUnmatchedSqlVariable.cs" />
     <EmbeddedResource Include="TestData\InlineSqlWithConstUnmatchedParameters.cs" />
     <EmbeddedResource Include="TestData\InlineSqlWithDbStringArgumentTestData.cs" />
