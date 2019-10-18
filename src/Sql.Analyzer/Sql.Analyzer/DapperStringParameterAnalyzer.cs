@@ -15,7 +15,7 @@ namespace Sql.Analyzer
     {
         public const string DiagnosticId = "SQL001";
 
-        public const string MessageFormat = "Argument with unspecified string type";
+        public const string MessageFormat = "SQL type is not specified for '{0}' argument";
 
         private const string Category = "API Guidance";
 
@@ -43,62 +43,15 @@ namespace Sql.Analyzer
         {
             var invocationExpressionSyntax = (InvocationExpressionSyntax)context.Node;
 
-            var methodSymbol = context.SemanticModel.GetSymbolInfo(invocationExpressionSyntax).Symbol as IMethodSymbol;
-            if (methodSymbol == null)
+            if (!invocationExpressionSyntax.IsDapperInlineSqlMethod(context.SemanticModel))
             {
                 return;
             }
 
-            var dapperClass = context.SemanticModel.Compilation.GetTypeByMetadataName("Dapper.SqlMapper");
-            if (methodSymbol.ContainingType != dapperClass)
-            {
-                return;
-            }
-
-            if (!CheckIfInlineSqlCommand(context, invocationExpressionSyntax))
-            {
-                return;
-            }
-
-            var badStringArgument = FindBadStringArgument(context, invocationExpressionSyntax);
-            if (badStringArgument == null)
-            {
-                return;
-            }
-
-            context.ReportDiagnostic(Diagnostic.Create(Rule, badStringArgument.GetLocation()));
+            ReportStringArgument(context, invocationExpressionSyntax);
         }
 
-        private bool CheckIfInlineSqlCommand(
-            SyntaxNodeAnalysisContext context,
-            InvocationExpressionSyntax invocationExpressionSyntax)
-        {
-            foreach (var argument in invocationExpressionSyntax.ArgumentList.Arguments)
-            {
-                var parameter = argument.DetermineParameter(context.SemanticModel);
-                if (!string.Equals(parameter.Name, "commandType"))
-                {
-                    continue;
-                }
-
-                var symbolInfo = context.SemanticModel.GetSymbolInfo(argument.Expression).Symbol;
-                if (symbolInfo == null)
-                {
-                    continue;
-                }
-
-                if (string.Equals(symbolInfo.Name, "Text"))
-                {
-                    break;
-                }
-
-                return false;
-            }
-
-            return true;
-        }
-
-        private ArgumentSyntax FindBadStringArgument(
+        private void ReportStringArgument(
             SyntaxNodeAnalysisContext context,
             InvocationExpressionSyntax invocationExpressionSyntax)
         {
@@ -117,15 +70,16 @@ namespace Sql.Analyzer
                     break;
                 }
 
-                if (symbolInfo.Parameters.Any(p => p.Type.Equals(stringType)))
+                foreach (var property in symbolInfo.Parameters)
                 {
-                    return argument;
+                    if (property.Type.Equals(stringType))
+                    {
+                        context.ReportDiagnostic(Diagnostic.Create(Rule, argument.GetLocation(), property.Name));
+                    }
                 }
 
                 break;
             }
-
-            return null;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Sql.Analyzer.Test
             var expected = new DiagnosticResult
                                {
                                    Id = DapperStringParameterAnalyzer.DiagnosticId,
-                                   Message = DapperStringParameterAnalyzer.MessageFormat,
+                                   Message = string.Format(DapperStringParameterAnalyzer.MessageFormat, "id"),
                                    Severity = DiagnosticSeverity.Warning,
                                    Locations = new[] { new DiagnosticResultLocation("Test0.cs", 13, 46) }
                                };

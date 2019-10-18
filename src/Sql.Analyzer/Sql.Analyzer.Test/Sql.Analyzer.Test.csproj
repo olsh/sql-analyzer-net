@@ -5,13 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestData\InlineSqlUnmatchedParameters.cs" />
+    <Compile Remove="TestData\InlineSqlUnmatchedSqlVariable.cs" />
+    <Compile Remove="TestData\InlineSqlWithConstUnmatchedParameters.cs" />
     <Compile Remove="TestData\InlineSqlWithDbStringArgumentTestData.cs" />
     <Compile Remove="TestData\InlineSqlWithStringArgumentTestData.cs" />
     <Compile Remove="TestData\StoredProcedureWithStringArgumentTestData.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="TestData\InlineSqlUnmatchedSqlVariable.cs" />
+    <EmbeddedResource Include="TestData\InlineSqlWithConstUnmatchedParameters.cs" />
     <EmbeddedResource Include="TestData\InlineSqlWithDbStringArgumentTestData.cs" />
+    <EmbeddedResource Include="TestData\InlineSqlUnmatchedParameters.cs" />
     <EmbeddedResource Include="TestData\InlineSqlWithStringArgumentTestData.cs" />
     <EmbeddedResource Include="TestData\StoredProcedureWithStringArgumentTestData.cs" />
   </ItemGroup>

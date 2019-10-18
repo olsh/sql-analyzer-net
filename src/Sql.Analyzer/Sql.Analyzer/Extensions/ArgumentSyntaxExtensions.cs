@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Diagnostics.SymbolStore;
+using System.Linq;
 using System.Threading;
 
 using Microsoft.CodeAnalysis;
@@ -68,6 +69,22 @@ namespace Sql.Analyzer.Extensions
                 {
                     return lastParameter;
                 }
+            }
+
+            return null;
+        }
+
+        public static string TryGetArgumentStringValue(this ArgumentSyntax argument, SemanticModel semanticModel)
+        {
+            if (argument.Expression is LiteralExpressionSyntax literalExpressionSyntax)
+            {
+                return literalExpressionSyntax.Token.Text;
+            }
+
+            var symbolVariable = semanticModel.GetConstantValue(argument.Expression);
+            if (symbolVariable.HasValue)
+            {
+                return symbolVariable.Value?.ToString() ?? string.Empty;
             }
 
             return null;
