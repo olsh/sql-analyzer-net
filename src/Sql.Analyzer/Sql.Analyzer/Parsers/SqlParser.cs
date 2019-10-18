@@ -5,8 +5,13 @@ namespace Sql.Analyzer.Parsers
 {
     internal static class SqlParser
     {
+        private static readonly Regex SqlDeclareRegex = new Regex(
+            @"declare\s(?<declaration>.*?)(select|update|delete|insert|merge|if|begin|set|;)",
+            RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
         private static readonly Regex SqlParameterRegex = new Regex(@"(?<!@)@(?<variable>\w+)", RegexOptions.Compiled);
-        private static readonly Regex SqlDeclareRegex = new Regex(@"declare\s(?<declaration>.*?)(select|update|delete|insert|merge)", RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+
+        private static readonly Regex SqlParameterAssignmentRegex = new Regex(@"@(?<declaration>\w+)\s*=\s*@", RegexOptions.Compiled);
 
         public static ICollection<string> FindParameters(string sql)
         {
@@ -14,10 +19,17 @@ namespace Sql.Analyzer.Parsers
             var declaredVariables = new HashSet<string>();
             foreach (Match match in SqlDeclareRegex.Matches(sql))
             {
-                foreach (Match declaration in SqlParameterRegex.Matches(match.Groups["declaration"].Value))
+                foreach (Match declaration in SqlParameterRegex.Matches(
+                    match.Groups["declaration"]
+                        .Value))
                 {
                     declaredVariables.Add(declaration.Groups["variable"].Value);
                 }
+            }
+
+            foreach (Match match in SqlParameterAssignmentRegex.Matches(sql))
+            {
+                declaredVariables.Add(match.Groups["declaration"].Value);
             }
 
             var matches = SqlParameterRegex.Matches(sql);
