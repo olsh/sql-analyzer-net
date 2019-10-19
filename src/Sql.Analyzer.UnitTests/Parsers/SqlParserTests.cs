@@ -12,7 +12,7 @@ namespace Sql.Analyzer.UnitTests.Parsers
         [TestMethod]
         public void FindSqlVariables_DeclareVariable()
         {
-            var sql = 
+            var sql =
                 @"DECLARE @ids udt_ids_list;
 
                 INSERT INTO @ids
@@ -90,6 +90,47 @@ namespace Sql.Analyzer.UnitTests.Parsers
             Assert.AreEqual(2, parameters.Count);
             Assert.IsTrue(parameters.Contains("uid"));
             Assert.IsTrue(parameters.Contains("aid"));
+        }
+
+        [TestMethod]
+        public void FindSqlVariables_DeclarationWithKeyWord()
+        {
+            var sql =
+                @"DECLARE  @month_difference VARCHAR(50) = '2566927'
+                 SELECT * FROM table WHERE a = @month_difference";
+
+            var parameters = SqlParser.FindParameters(sql);
+
+            Assert.AreEqual(0, parameters.Count);
+        }
+
+        [TestMethod]
+        public void FindSqlVariables_SingleLineComment()
+        {
+            var sql =
+                @"SELECT * FROM table 
+                WHERE -- a = @month_difference AND 
+                @z = 1";
+
+            var parameters = SqlParser.FindParameters(sql);
+
+            Assert.AreEqual(1, parameters.Count);
+            Assert.IsTrue(parameters.Contains("z"));
+        }
+
+        [TestMethod]
+        public void FindSqlVariables_MultiLineComment()
+        {
+            var sql =
+                @"SELECT * FROM table 
+                WHERE /*a = @month_difference AND 
+                @z = 1  AND */ @b = 4
+                -- @c = 2";
+
+            var parameters = SqlParser.FindParameters(sql);
+
+            Assert.AreEqual(1, parameters.Count);
+            Assert.IsTrue(parameters.Contains("b"));
         }
     }
 }
