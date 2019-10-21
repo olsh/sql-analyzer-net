@@ -5,12 +5,12 @@ using Dapper;
 
 namespace Sql.Analyzer.Test.TestData
 {
-    public class InlineSqlWithStringParameterTestData
+    public class InlineSqlWithDbStringArgument
     {
         private static async Task Main(string[] args)
         {
             var sql = new SqlConnection();
-            sql.Execute("inline sql @param, @not_found", new { param = new DbString() { IsAnsi = true, Value = "some_string" } });
+            sql.Execute("inline sql @param", new { param = new DbString() { IsAnsi = true, Value = "some_string" } });
         }
     }
 }

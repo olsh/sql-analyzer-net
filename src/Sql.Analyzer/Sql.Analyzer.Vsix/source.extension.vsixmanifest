@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-  <Metadata>
-    <Identity Id="Sql.Analyzer.c99afd07-7621-4f0c-ab43-a1ff9b111c67" Version="1.0" Language="en-US" Publisher="olsh"/>
-    <DisplayName>Sql.Analyzer</DisplayName>
-    <Description xml:space="preserve">This is a sample diagnostic extension for the .NET Compiler Platform ("Roslyn").</Description>
-  </Metadata>
-  <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />
-  </Installation>
-  <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-  </Dependencies>
-  <Assets>
-    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="Sql.Analyzer" Path="|Sql.Analyzer|"/>
-    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="Sql.Analyzer" Path="|Sql.Analyzer|"/>
-  </Assets>
-  <Prerequisites>
-    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
-    <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[15.0,16.0)" DisplayName="Roslyn Language Services" />
-  </Prerequisites>
+    <Metadata>
+        <Identity Id="Sql.Analyzer.c99afd07-7621-4f0c-ab43-a1ff9b111c67" Version="0.0.6" Language="en-US" Publisher="Oleg Shevchenko"/>
+        <DisplayName>Sql.Analyzer</DisplayName>
+        <Description xml:space="preserve">A highly experimental Roslyn-based analyzer for SQL related stuff in .NET</Description>
+        <MoreInfo>https://github.com/olsh/sql-analyzer</MoreInfo>
+        <GettingStartedGuide>https://github.com/olsh/sql-analyzer</GettingStartedGuide>
+        <ReleaseNotes>https://github.com/olsh/sql-analyzer</ReleaseNotes>
+        <Tags>sql analyzer dapper</Tags>
+    </Metadata>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[15.0,)" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="Sql.Analyzer" Path="|Sql.Analyzer|"/>
+        <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="Sql.Analyzer" Path="|Sql.Analyzer|"/>
+    </Assets>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[15.0,16.0)" DisplayName="Roslyn Language Services" />
+    </Prerequisites>
 </PackageManifest>

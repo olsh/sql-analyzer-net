@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -25,9 +24,7 @@ namespace Sql.Analyzer
 
         private const string Category = "API Guidance";
 
-        private static readonly string Description = "Parameters mismatching";
-
-        private static readonly string Title = "Parameters mismatching";
+        private static readonly string Title = "SQL parameters mismatch";
 
         private static readonly DiagnosticDescriptor CsharpArgumentNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,
@@ -36,7 +33,7 @@ namespace Sql.Analyzer
             Category,
             DiagnosticSeverity.Warning,
             true,
-            Description);
+            Title);
 
         private static readonly DiagnosticDescriptor SqlParameterNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,
@@ -45,7 +42,7 @@ namespace Sql.Analyzer
             Category,
             DiagnosticSeverity.Warning,
             true,
-            Description);
+            Title);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
             ImmutableArray.Create(CsharpArgumentNotFoundRule, SqlParameterNotFoundRule);

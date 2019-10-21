@@ -2,8 +2,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Sql.Analyzer.Test.Helpers;
-
 using TestHelper;
 
 namespace Sql.Analyzer.Test
@@ -11,6 +9,8 @@ namespace Sql.Analyzer.Test
     [TestClass]
     public class DapperStringParameterAnalyzerTests : DiagnosticVerifier
     {
+        protected override string TestDataFolder => "DapperStringParameterAnalyzer";
+
         [TestMethod]
         public void Empty_NotTriggered()
         {
@@ -20,9 +20,17 @@ namespace Sql.Analyzer.Test
         }
 
         [TestMethod]
+        public void InlineSqlWithoutStringArgument_NotTriggered()
+        {
+            var code = ReadTestData("InlineSqlWithDbStringArgument.cs");
+
+            VerifyCSharpDiagnostic(code);
+        }
+
+        [TestMethod]
         public void InlineSqlWithStringArgument_AnalyzerTriggered()
         {
-            var code = EmbeddedResourceHelper.ReadTestData("InlineSqlWithStringArgumentTestData.cs");
+            var code = ReadTestData("InlineSqlWithStringArgument.cs");
 
             var expected = new DiagnosticResult
                                {
@@ -36,17 +44,9 @@ namespace Sql.Analyzer.Test
         }
 
         [TestMethod]
-        public void InlineSqlWithoutStringArgument_NotTriggered()
-        {
-            var code = EmbeddedResourceHelper.ReadTestData("InlineSqlWithDbStringArgumentTestData.cs");
-
-            VerifyCSharpDiagnostic(code);
-        }
-
-        [TestMethod]
         public void StoredProcedureWithStringArgument_NotTriggered()
         {
-            var code = EmbeddedResourceHelper.ReadTestData("StoredProcedureWithStringArgumentTestData.cs");
+            var code = ReadTestData("StoredProcedureWithStringArgument.cs");
 
             VerifyCSharpDiagnostic(code);
         }

@@ -15,9 +15,7 @@
     <Copyright>Copyright</Copyright>
     <PackageTags>analyzers, sql, dapper</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
-    <Version>0.0.5</Version>
-    <AssemblyVersion>0.0.5.0</AssemblyVersion>
-    <FileVersion>0.0.5.0</FileVersion>
+    <Version>0.0.6</Version>
   </PropertyGroup>
 
   <ItemGroup>

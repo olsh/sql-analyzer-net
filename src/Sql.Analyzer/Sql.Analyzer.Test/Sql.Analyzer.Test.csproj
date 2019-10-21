@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlDeclaredVariableParameters.cs" />
+    <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
+    <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedSqlVariable.cs" />
+    <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlWithConstUnmatchedParameters.cs" />
+    <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlWithDbStringArgument.cs" />
+    <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlWithStringArgument.cs" />
+    <Compile Remove="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
     <Compile Remove="TestData\InlineSqlDeclaredVariableParameters.cs" />
-    <Compile Remove="TestData\InlineSqlUnmatchedParameters - Copy.cs" />
     <Compile Remove="TestData\InlineSqlUnmatchedParameters.cs" />
     <Compile Remove="TestData\InlineSqlUnmatchedSqlVariable.cs" />
     <Compile Remove="TestData\InlineSqlWithConstUnmatchedParameters.cs" />
@@ -16,14 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="TestData\InlineSqlDeclaredVariableParameters.cs" />
-    <EmbeddedResource Include="TestData\InlineSqlUnmatchedParameters - Copy.cs" />
-    <EmbeddedResource Include="TestData\InlineSqlUnmatchedSqlVariable.cs" />
-    <EmbeddedResource Include="TestData\InlineSqlWithConstUnmatchedParameters.cs" />
-    <EmbeddedResource Include="TestData\InlineSqlWithDbStringArgumentTestData.cs" />
-    <EmbeddedResource Include="TestData\InlineSqlUnmatchedParameters.cs" />
-    <EmbeddedResource Include="TestData\InlineSqlWithStringArgumentTestData.cs" />
-    <EmbeddedResource Include="TestData\StoredProcedureWithStringArgumentTestData.cs" />
+    <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlDeclaredVariableParameters.cs" />
+    <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedSqlVariable.cs" />
+    <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlWithConstUnmatchedParameters.cs" />
+    <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlWithDbStringArgument.cs" />
+    <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
+    <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlWithStringArgument.cs" />
+    <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
   </ItemGroup>
 
   <ItemGroup>

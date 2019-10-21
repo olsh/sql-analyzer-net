@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 using Microsoft.CodeAnalysis;
@@ -13,6 +15,20 @@ namespace TestHelper
     /// </summary>
     public abstract partial class DiagnosticVerifier
     {
+        protected abstract string TestDataFolder { get; }
+
+        public string ReadTestData(string testDataFileName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = $"Sql.Analyzer.Test.TestData.{TestDataFolder}.{testDataFileName}";
+
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            using (var reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
+
         /// <summary>
         /// Get the Visual Basic analyzer being tested (C#) - to be implemented in non-abstract class
         /// </summary>

@@ -1,5 +1,4 @@
 using System.Collections.Immutable;
-using System.Linq;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -19,9 +18,9 @@ namespace Sql.Analyzer
 
         private const string Category = "API Guidance";
 
-        private static readonly string Description = "You should specify type of SQL parameter explicitly";
+        private static readonly string Description = "Specify SQL type explicitly with DbString class. On SQL Server it is crucial to use the unicode when querying unicode and ANSI when querying non unicode.";
 
-        private static readonly string Title = "Specify SQL type explicitly with DbString class";
+        private static readonly string Title = "SQL type is not specified";
 
         private static readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor(
             DiagnosticId,
@@ -30,7 +29,8 @@ namespace Sql.Analyzer
             Category,
             DiagnosticSeverity.Warning,
             true,
-            Description);
+            Description,
+            "https://github.com/StackExchange/Dapper/blob/master/Readme.md#ansi-strings-and-varchar");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
