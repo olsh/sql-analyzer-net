@@ -13,7 +13,7 @@ namespace Sql.Analyzer.Extensions
                 return false;
             }
 
-            var dapperClass = semanticModel.Compilation.GetTypeByMetadataName("Dapper.SqlMapper");
+            var dapperClass = semanticModel.GetDapperSqlMapperSymbol();
             if (methodSymbol.ContainingType != dapperClass)
             {
                 return false;

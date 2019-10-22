@@ -30,7 +30,7 @@ namespace Sql.Analyzer
             DiagnosticSeverity.Warning,
             true,
             Description,
-            "https://github.com/StackExchange/Dapper/blob/master/Readme.md#ansi-strings-and-varchar");
+            "https://github.com/olsh/sql-analyzer#sql001-sql-type-is-not-specified");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

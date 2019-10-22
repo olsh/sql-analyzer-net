@@ -33,7 +33,8 @@ namespace Sql.Analyzer
             Category,
             DiagnosticSeverity.Warning,
             true,
-            Title);
+            Title,
+            "https://github.com/olsh/sql-analyzer#sql002-sql-parameters-mismatch");
 
         private static readonly DiagnosticDescriptor SqlParameterNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,

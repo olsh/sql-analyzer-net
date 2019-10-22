@@ -1,5 +1,9 @@
 # SQL Analyzer
 
+[![Build status](https://ci.appveyor.com/api/projects/status/vdgcjc30q62c2rnx?svg=true)](https://ci.appveyor.com/project/olsh/sql-analyzer)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sql-analyzer&metric=alert_status)](https://sonarcloud.io/dashboard?id=sql-analyzer)
+
+
 A highly experimental Roslyn-based analyzer for SQL related stuff in .NET
 
 
@@ -31,3 +35,17 @@ Compliant Solution:
 ```csharp
 var dog = connection.Query<Dog>("select Age = @Age, Id = @Id", new { Age = (int?)null, Id = guid });
 ```
+
+### SQL003: Using 'Query' method is not optimal here
+
+Noncompliant Code Example:  
+```csharp
+var dog = connection.Query<Dog>("select * from dogs").Single();
+```
+
+Compliant Solution:  
+```csharp
+var dog = connection.QuerySingle<Dog>("select * from dogs");
+```
+
+https://github.com/StackExchange/Dapper#performance
