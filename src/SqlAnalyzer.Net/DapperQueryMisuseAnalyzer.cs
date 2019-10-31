@@ -6,9 +6,9 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-using Sql.Analyzer.Extensions;
+using SqlAnalyzer.Net.Extensions;
 
-namespace Sql.Analyzer
+namespace SqlAnalyzer.Net
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class DapperQueryMisuseAnalyzer : DiagnosticAnalyzer
@@ -31,7 +31,7 @@ namespace Sql.Analyzer
             DiagnosticSeverity.Warning,
             true,
             Description,
-            "https://github.com/StackExchange/Dapper#performance");
+            "https://github.com/olsh/sql-analyzer-net#sql003-using-query-method-is-not-optimal-here");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

@@ -1,6 +1,6 @@
 ﻿using Microsoft.CodeAnalysis;
 
-namespace Sql.Analyzer.Extensions
+namespace SqlAnalyzer.Net.Extensions
 {
     internal static class SemanticModelExtensions
     {

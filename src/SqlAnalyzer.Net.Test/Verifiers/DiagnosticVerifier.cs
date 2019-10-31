@@ -8,7 +8,9 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestHelper
+using SqlAnalyzer.Net.Test.Helpers;
+
+namespace SqlAnalyzer.Net.Test
 {
     /// <summary>
     /// Superclass of all Unit Tests for DiagnosticAnalyzers

@@ -1,0 +1,1232 @@
+{
+  "SqlAnalyzer.Net.dll": {
+    "c:\\Projects\\sql-analyzer-net\\src\\SqlAnalyzer.Net\\DapperParametersMatchingAnalyzer.cs": {
+      "SqlAnalyzer.Net.DapperParametersMatchingAnalyzer": {
+        "System.Collections.Immutable.ImmutableArray`1<Microsoft.CodeAnalysis.DiagnosticDescriptor> SqlAnalyzer.Net.DapperParametersMatchingAnalyzer::get_SupportedDiagnostics()": {
+          "Lines": {
+            "49": 7
+          },
+          "Branches": []
+        },
+        "System.Void SqlAnalyzer.Net.DapperParametersMatchingAnalyzer::Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)": {
+          "Lines": {
+            "52": 4,
+            "53": 4,
+            "54": 4
+          },
+          "Branches": []
+        },
+        "System.Void SqlAnalyzer.Net.DapperParametersMatchingAnalyzer::AnalyzeInvocationExpression(Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext)": {
+          "Lines": {
+            "57": 4,
+            "58": 4,
+            "60": 4,
+            "61": 0,
+            "62": 0,
+            "65": 4,
+            "66": 4
+          },
+          "Branches": [
+            {
+              "Line": 60,
+              "Offset": 32,
+              "EndOffset": 34,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 60,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Void SqlAnalyzer.Net.DapperParametersMatchingAnalyzer::ReportDiagnostics(Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext,Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax)": {
+          "Lines": {
+            "71": 4,
+            "72": 4,
+            "73": 4,
+            "74": 28,
+            "75": 8,
+            "76": 8,
+            "77": 8,
+            "78": 4,
+            "79": 4,
+            "82": 4,
+            "83": 0,
+            "84": 0,
+            "87": 4,
+            "89": 4,
+            "92": 4,
+            "93": 4,
+            "94": 4,
+            "95": 8,
+            "96": 4,
+            "97": 4,
+            "99": 4,
+            "100": 0,
+            "101": 0,
+            "104": 16,
+            "105": 2,
+            "106": 2,
+            "107": 2,
+            "108": 2,
+            "109": 2,
+            "110": 2,
+            "111": 2,
+            "113": 14,
+            "114": 1,
+            "115": 1,
+            "116": 1,
+            "117": 1,
+            "118": 1,
+            "119": 1,
+            "120": 1,
+            "121": 4
+          },
+          "Branches": [
+            {
+              "Line": 74,
+              "Offset": 275,
+              "EndOffset": 31,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 8
+            },
+            {
+              "Line": 77,
+              "Offset": 89,
+              "EndOffset": 91,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 82,
+              "Offset": 117,
+              "EndOffset": 119,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 82,
+              "Offset": 117,
+              "EndOffset": 125,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 4
+            },
+            {
+              "Line": 77,
+              "Offset": 89,
+              "EndOffset": 138,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 92,
+              "Offset": 155,
+              "EndOffset": 157,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 4
+            },
+            {
+              "Line": 92,
+              "Offset": 155,
+              "EndOffset": 209,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 92,
+              "Offset": 214,
+              "EndOffset": 216,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 4
+            },
+            {
+              "Line": 95,
+              "Offset": 230,
+              "EndOffset": 232,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 95,
+              "Offset": 230,
+              "EndOffset": 255,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            },
+            {
+              "Line": 92,
+              "Offset": 214,
+              "EndOffset": 267,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 4
+            },
+            {
+              "Line": 74,
+              "Offset": 275,
+              "EndOffset": 280,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 4
+            },
+            {
+              "Line": 99,
+              "Offset": 281,
+              "EndOffset": 283,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 4
+            },
+            {
+              "Line": 99,
+              "Offset": 281,
+              "EndOffset": 289,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 294,
+              "EndOffset": 296,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 99,
+              "Offset": 294,
+              "EndOffset": 302,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 4
+            },
+            {
+              "Line": 104,
+              "Offset": 377,
+              "EndOffset": 324,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 2
+            },
+            {
+              "Line": 104,
+              "Offset": 377,
+              "EndOffset": 379,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 4
+            },
+            {
+              "Line": 113,
+              "Offset": 469,
+              "EndOffset": 416,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 1
+            },
+            {
+              "Line": 113,
+              "Offset": 469,
+              "EndOffset": 471,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Void SqlAnalyzer.Net.DapperParametersMatchingAnalyzer::.cctor()": {
+          "Lines": {
+            "27": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 1,
+            "44": 1,
+            "45": 1,
+            "46": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Projects\\sql-analyzer-net\\src\\SqlAnalyzer.Net\\DapperQueryMisuseAnalyzer.cs": {
+      "SqlAnalyzer.Net.DapperQueryMisuseAnalyzer": {
+        "System.Collections.Immutable.ImmutableArray`1<Microsoft.CodeAnalysis.DiagnosticDescriptor> SqlAnalyzer.Net.DapperQueryMisuseAnalyzer::get_SupportedDiagnostics()": {
+          "Lines": {
+            "36": 4
+          },
+          "Branches": []
+        },
+        "System.Void SqlAnalyzer.Net.DapperQueryMisuseAnalyzer::Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)": {
+          "Lines": {
+            "39": 2,
+            "40": 2,
+            "41": 2
+          },
+          "Branches": []
+        },
+        "System.Void SqlAnalyzer.Net.DapperQueryMisuseAnalyzer::AnalyzeInvocationExpression(Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext)": {
+          "Lines": {
+            "44": 4,
+            "45": 4,
+            "47": 4,
+            "48": 4,
+            "49": 0,
+            "50": 0,
+            "53": 4,
+            "55": 4,
+            "56": 2,
+            "57": 2,
+            "60": 2,
+            "61": 2,
+            "62": 8,
+            "63": 2,
+            "64": 2,
+            "66": 2,
+            "67": 0,
+            "68": 0,
+            "71": 2,
+            "72": 2,
+            "73": 2,
+            "74": 0,
+            "75": 0,
+            "78": 2,
+            "80": 2,
+            "81": 1,
+            "82": 1,
+            "83": 1,
+            "85": 2,
+            "86": 2,
+            "87": 2,
+            "88": 2,
+            "89": 2,
+            "90": 4
+          },
+          "Branches": [
+            {
+              "Line": 48,
+              "Offset": 60,
+              "EndOffset": 62,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 48,
+              "Offset": 60,
+              "EndOffset": 68,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 4
+            },
+            {
+              "Line": 55,
+              "Offset": 88,
+              "EndOffset": 90,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 2
+            },
+            {
+              "Line": 55,
+              "Offset": 88,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 55,
+              "Offset": 116,
+              "EndOffset": 118,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 2
+            },
+            {
+              "Line": 55,
+              "Offset": 116,
+              "EndOffset": 124,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 60,
+              "Offset": 137,
+              "EndOffset": 139,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 60,
+              "Offset": 137,
+              "EndOffset": 162,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 66,
+              "Offset": 179,
+              "EndOffset": 181,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            },
+            {
+              "Line": 66,
+              "Offset": 179,
+              "EndOffset": 206,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 211,
+              "EndOffset": 213,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 211,
+              "EndOffset": 219,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 2
+            },
+            {
+              "Line": 73,
+              "Offset": 274,
+              "EndOffset": 276,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 2
+            },
+            {
+              "Line": 73,
+              "Offset": 274,
+              "EndOffset": 292,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 297,
+              "EndOffset": 299,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 297,
+              "EndOffset": 302,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 2
+            },
+            {
+              "Line": 80,
+              "Offset": 341,
+              "EndOffset": 343,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 1
+            },
+            {
+              "Line": 80,
+              "Offset": 341,
+              "EndOffset": 359,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 2
+            },
+            {
+              "Line": 86,
+              "Offset": 385,
+              "EndOffset": 387,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 2
+            },
+            {
+              "Line": 86,
+              "Offset": 385,
+              "EndOffset": 429,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 4
+            }
+          ]
+        },
+        "System.Void SqlAnalyzer.Net.DapperQueryMisuseAnalyzer::.cctor()": {
+          "Lines": {
+            "22": 1,
+            "24": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Projects\\sql-analyzer-net\\src\\SqlAnalyzer.Net\\DapperStringParameterAnalyzer.cs": {
+      "SqlAnalyzer.Net.DapperStringParameterAnalyzer": {
+        "System.Collections.Immutable.ImmutableArray`1<Microsoft.CodeAnalysis.DiagnosticDescriptor> SqlAnalyzer.Net.DapperStringParameterAnalyzer::get_SupportedDiagnostics()": {
+          "Lines": {
+            "35": 5
+          },
+          "Branches": []
+        },
+        "System.Void SqlAnalyzer.Net.DapperStringParameterAnalyzer::Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)": {
+          "Lines": {
+            "38": 4,
+            "39": 4,
+            "40": 4
+          },
+          "Branches": []
+        },
+        "System.Void SqlAnalyzer.Net.DapperStringParameterAnalyzer::AnalyzeInvocationExpression(Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext)": {
+          "Lines": {
+            "43": 3,
+            "44": 3,
+            "46": 3,
+            "47": 1,
+            "48": 1,
+            "51": 2,
+            "52": 3
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 32,
+              "EndOffset": 34,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 46,
+              "Offset": 32,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void SqlAnalyzer.Net.DapperStringParameterAnalyzer::ReportStringArgument(Microsoft.CodeAnalysis.Diagnostics.SyntaxNodeAnalysisContext,Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax)": {
+          "Lines": {
+            "57": 2,
+            "58": 2,
+            "59": 12,
+            "60": 4,
+            "61": 4,
+            "62": 4,
+            "63": 2,
+            "64": 2,
+            "67": 2,
+            "68": 2,
+            "69": 0,
+            "70": 0,
+            "73": 10,
+            "74": 2,
+            "75": 2,
+            "76": 1,
+            "77": 1,
+            "78": 1,
+            "79": 2,
+            "81": 2,
+            "83": 2
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 286,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            },
+            {
+              "Line": 62,
+              "Offset": 109,
+              "EndOffset": 111,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 62,
+              "Offset": 109,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 68,
+              "Offset": 170,
+              "EndOffset": 172,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 68,
+              "Offset": 170,
+              "EndOffset": 175,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 73,
+              "Offset": 275,
+              "EndOffset": 196,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2
+            },
+            {
+              "Line": 75,
+              "Offset": 223,
+              "EndOffset": 225,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 75,
+              "Offset": 223,
+              "EndOffset": 267,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 73,
+              "Offset": 275,
+              "EndOffset": 291,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 2
+            },
+            {
+              "Line": 59,
+              "Offset": 286,
+              "EndOffset": 291,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Void SqlAnalyzer.Net.DapperStringParameterAnalyzer::.cctor()": {
+          "Lines": {
+            "21": 1,
+            "23": 1,
+            "25": 1,
+            "26": 1,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Projects\\sql-analyzer-net\\src\\SqlAnalyzer.Net\\Parsers\\SqlParser.cs": {
+      "SqlAnalyzer.Net.Parsers.SqlParser": {
+        "System.Collections.Generic.ICollection`1<System.String> SqlAnalyzer.Net.Parsers.SqlParser::FindParameters(System.String)": {
+          "Lines": {
+            "21": 12,
+            "22": 12,
+            "23": 12,
+            "25": 12,
+            "26": 12,
+            "27": 48,
+            "28": 6,
+            "29": 34,
+            "30": 6,
+            "31": 6,
+            "32": 8,
+            "33": 8,
+            "34": 8,
+            "35": 6,
+            "37": 40,
+            "38": 2,
+            "39": 2,
+            "40": 2,
+            "42": 12,
+            "43": 94,
+            "44": 29,
+            "45": 29,
+            "46": 29,
+            "48": 12,
+            "50": 12,
+            "51": 12
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 213,
+              "EndOffset": 72,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 6
+            },
+            {
+              "Line": 29,
+              "Offset": 180,
+              "EndOffset": 128,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 8
+            },
+            {
+              "Line": 29,
+              "Offset": 180,
+              "EndOffset": 182,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 6
+            },
+            {
+              "Line": 27,
+              "Offset": 213,
+              "EndOffset": 218,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 12
+            },
+            {
+              "Line": 37,
+              "Offset": 314,
+              "EndOffset": 262,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2
+            },
+            {
+              "Line": 37,
+              "Offset": 314,
+              "EndOffset": 316,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 12
+            },
+            {
+              "Line": 43,
+              "Offset": 415,
+              "EndOffset": 363,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 29
+            },
+            {
+              "Line": 43,
+              "Offset": 415,
+              "EndOffset": 417,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 12
+            }
+          ]
+        },
+        "System.Void SqlAnalyzer.Net.Parsers.SqlParser::.cctor()": {
+          "Lines": {
+            "8": 1,
+            "9": 1,
+            "10": 1,
+            "12": 1,
+            "14": 1,
+            "16": 1,
+            "18": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "c:\\Projects\\sql-analyzer-net\\src\\SqlAnalyzer.Net\\Extensions\\ArgumentSyntaxExtensions.cs": {
+      "SqlAnalyzer.Net.Extensions.ArgumentSyntaxExtensions": {
+        "Microsoft.CodeAnalysis.IParameterSymbol SqlAnalyzer.Net.Extensions.ArgumentSyntaxExtensions::DetermineParameter(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax,Microsoft.CodeAnalysis.SemanticModel,System.Boolean,System.Threading.CancellationToken)": {
+          "Lines": {
+            "21": 27,
+            "22": 27,
+            "23": 0,
+            "24": 0,
+            "27": 27,
+            "28": 0,
+            "29": 0,
+            "32": 27,
+            "33": 27,
+            "34": 0,
+            "35": 0,
+            "38": 27,
+            "41": 27,
+            "42": 1,
+            "43": 1,
+            "44": 6,
+            "48": 26,
+            "49": 26,
+            "50": 0,
+            "51": 0,
+            "54": 26,
+            "55": 26,
+            "56": 26,
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "67": 0,
+            "68": 0,
+            "69": 0,
+            "71": 0,
+            "73": 0,
+            "74": 27
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 24,
+              "EndOffset": 35,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 27
+            },
+            {
+              "Line": 27,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 58,
+              "EndOffset": 69,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 27
+            },
+            {
+              "Line": 33,
+              "Offset": 100,
+              "EndOffset": 102,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 100,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 27
+            },
+            {
+              "Line": 41,
+              "Offset": 124,
+              "EndOffset": 126,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 124,
+              "EndOffset": 142,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 26
+            },
+            {
+              "Line": 41,
+              "Offset": 147,
+              "EndOffset": 149,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 41,
+              "Offset": 147,
+              "EndOffset": 212,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 26
+            },
+            {
+              "Line": 49,
+              "Offset": 239,
+              "EndOffset": 241,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 49,
+              "Offset": 239,
+              "EndOffset": 247,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 26
+            },
+            {
+              "Line": 54,
+              "Offset": 262,
+              "EndOffset": 264,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 26
+            },
+            {
+              "Line": 54,
+              "Offset": 262,
+              "EndOffset": 278,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 283,
+              "EndOffset": 285,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 303,
+              "EndOffset": 305,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 62,
+              "Offset": 303,
+              "EndOffset": 311,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 322,
+              "EndOffset": 324,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 67,
+              "Offset": 322,
+              "EndOffset": 331,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 59,
+              "Offset": 283,
+              "EndOffset": 332,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String SqlAnalyzer.Net.Extensions.ArgumentSyntaxExtensions::TryGetArgumentStringValue(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax,Microsoft.CodeAnalysis.SemanticModel)": {
+          "Lines": {
+            "77": 4,
+            "78": 4,
+            "79": 3,
+            "80": 3,
+            "83": 1,
+            "84": 1,
+            "85": 1,
+            "86": 1,
+            "89": 0,
+            "90": 4
+          },
+          "Branches": [
+            {
+              "Line": 78,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 78,
+              "Offset": 19,
+              "EndOffset": 40,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 84,
+              "Offset": 74,
+              "EndOffset": 76,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 86,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 85,
+              "EndOffset": 91,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 86,
+              "Offset": 97,
+              "EndOffset": 99,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 97,
+              "EndOffset": 105,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 84,
+              "Offset": 74,
+              "EndOffset": 109,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "c:\\Projects\\sql-analyzer-net\\src\\SqlAnalyzer.Net\\Extensions\\InvocationExpressionExtensions.cs": {
+      "SqlAnalyzer.Net.Extensions.InvocationExpressionExtensions": {
+        "System.Boolean SqlAnalyzer.Net.Extensions.InvocationExpressionExtensions::IsDapperInlineSqlMethod(Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax,Microsoft.CodeAnalysis.SemanticModel)": {
+          "Lines": {
+            "9": 7,
+            "10": 7,
+            "11": 7,
+            "12": 0,
+            "13": 0,
+            "16": 7,
+            "17": 7,
+            "18": 0,
+            "19": 0,
+            "22": 50,
+            "23": 15,
+            "24": 15,
+            "25": 15,
+            "26": 14,
+            "27": 14,
+            "30": 1,
+            "31": 1,
+            "32": 0,
+            "33": 0,
+            "36": 1,
+            "37": 0,
+            "38": 0,
+            "41": 1,
+            "44": 6,
+            "45": 7
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 39,
+              "EndOffset": 41,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 39,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 17,
+              "Offset": 73,
+              "EndOffset": 75,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 17,
+              "Offset": 73,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 7
+            },
+            {
+              "Line": 22,
+              "Offset": 255,
+              "EndOffset": 112,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 15
+            },
+            {
+              "Line": 25,
+              "Offset": 166,
+              "EndOffset": 168,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 14
+            },
+            {
+              "Line": 25,
+              "Offset": 166,
+              "EndOffset": 171,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 212,
+              "EndOffset": 214,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 31,
+              "Offset": 212,
+              "EndOffset": 217,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 36,
+              "Offset": 238,
+              "EndOffset": 240,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 36,
+              "Offset": 238,
+              "EndOffset": 243,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 255,
+              "EndOffset": 260,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 6
+            }
+          ]
+        }
+      }
+    },
+    "c:\\Projects\\sql-analyzer-net\\src\\SqlAnalyzer.Net\\Extensions\\SemanticModelExtensions.cs": {
+      "SqlAnalyzer.Net.Extensions.SemanticModelExtensions": {
+        "Microsoft.CodeAnalysis.INamedTypeSymbol SqlAnalyzer.Net.Extensions.SemanticModelExtensions::GetDapperSqlMapperSymbol(Microsoft.CodeAnalysis.SemanticModel)": {
+          "Lines": {
+            "8": 11,
+            "9": 11,
+            "10": 11
+          },
+          "Branches": []
+        },
+        "Microsoft.CodeAnalysis.INamedTypeSymbol SqlAnalyzer.Net.Extensions.SemanticModelExtensions::GetLinqEnumerableSymbol(Microsoft.CodeAnalysis.SemanticModel)": {
+          "Lines": {
+            "13": 2,
+            "14": 2,
+            "15": 2
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

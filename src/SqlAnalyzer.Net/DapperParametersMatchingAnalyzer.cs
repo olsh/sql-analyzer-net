@@ -8,10 +8,10 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-using Sql.Analyzer.Extensions;
-using Sql.Analyzer.Parsers;
+using SqlAnalyzer.Net.Extensions;
+using SqlAnalyzer.Net.Parsers;
 
-namespace Sql.Analyzer
+namespace SqlAnalyzer.Net
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class DapperParametersMatchingAnalyzer : DiagnosticAnalyzer
@@ -34,7 +34,7 @@ namespace Sql.Analyzer
             DiagnosticSeverity.Warning,
             true,
             Title,
-            "https://github.com/olsh/sql-analyzer#sql002-sql-parameters-mismatch");
+            "https://github.com/olsh/sql-analyzer-net#sql002-sql-parameters-mismatch");
 
         private static readonly DiagnosticDescriptor SqlParameterNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,

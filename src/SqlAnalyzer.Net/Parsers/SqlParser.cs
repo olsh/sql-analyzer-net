@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace Sql.Analyzer.Parsers
+namespace SqlAnalyzer.Net.Parsers
 {
     internal static class SqlParser
     {

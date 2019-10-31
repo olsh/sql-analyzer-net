@@ -4,7 +4,7 @@ using System.Threading;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
-namespace Sql.Analyzer.Extensions
+namespace SqlAnalyzer.Net.Extensions
 {
     public static class ArgumentSyntaxExtensions
     {

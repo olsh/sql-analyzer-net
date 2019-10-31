@@ -2,7 +2,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Sql.Analyzer.Parsers;
+using SqlAnalyzer.Net.Parsers;
 
 namespace SqlAnalyzer.Net.Test.Parsers
 {

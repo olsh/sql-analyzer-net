@@ -5,9 +5,9 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
-using Sql.Analyzer.Extensions;
+using SqlAnalyzer.Net.Extensions;
 
-namespace Sql.Analyzer
+namespace SqlAnalyzer.Net
 {
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     public class DapperStringParameterAnalyzer : DiagnosticAnalyzer
@@ -30,7 +30,7 @@ namespace Sql.Analyzer
             DiagnosticSeverity.Warning,
             true,
             Description,
-            "https://github.com/olsh/sql-analyzer#sql001-sql-type-is-not-specified");
+            "https://github.com/olsh/sql-analyzer-net#sql001-sql-type-is-not-specified");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

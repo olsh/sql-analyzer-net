@@ -1,10 +1,10 @@
 # SQL Analyzer
 
-[![Build status](https://ci.appveyor.com/api/projects/status/vdgcjc30q62c2rnx?svg=true)](https://ci.appveyor.com/project/olsh/sql-analyzer)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sql-analyzer&metric=alert_status)](https://sonarcloud.io/dashboard?id=sql-analyzer)
+[![Build status](https://ci.appveyor.com/api/projects/status/vdgcjc30q62c2rnx?svg=true)](https://ci.appveyor.com/project/olsh/sql-analyzer-net)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sql-analyzer&metric=alert_status)](https://sonarcloud.io/dashboard?id=sql-analyzer-net)
 
 
-A highly experimental Roslyn-based analyzer for SQL related stuff in .NET
+A Roslyn-based analyzer for SQL related stuff in .NET
 
 
 ## Analyzers

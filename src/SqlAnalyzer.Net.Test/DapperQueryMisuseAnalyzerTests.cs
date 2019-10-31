@@ -2,9 +2,9 @@
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using TestHelper;
+using SqlAnalyzer.Net.Test.Helpers;
 
-namespace Sql.Analyzer.Test
+namespace SqlAnalyzer.Net.Test
 {
     [TestClass]
     public class DapperQueryMisuseAnalyzerTests : DiagnosticVerifier
