@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Sql.Analyzer\Sql.Analyzer.csproj" />
+    <ProjectReference Include="..\SqlAnalyzer.Net\SqlAnalyzer.Net.csproj" />
   </ItemGroup>
 
 </Project>

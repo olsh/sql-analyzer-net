@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Sql.Analyzer.Parsers;
 
-namespace Sql.Analyzer.UnitTests.Parsers
+namespace SqlAnalyzer.Net.Test.Parsers
 {
     [TestClass]
     public class SqlParserTests

@@ -20,7 +20,7 @@ namespace TestHelper
         public string ReadTestData(string testDataFileName)
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = $"Sql.Analyzer.Test.TestData.{TestDataFolder}.{testDataFileName}";
+            var resourceName = $"SqlAnalyzer.Net.Test.TestData.{TestDataFolder}.{testDataFileName}";
 
             using (var stream = assembly.GetManifestResourceStream(resourceName))
             using (var reader = new StreamReader(stream))

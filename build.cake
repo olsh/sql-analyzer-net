@@ -1,20 +1,20 @@
-#tool nuget:?package=Codecov
-#addin nuget:?package=Cake.Codecov
+#tool nuget:?package=Codecov&version=1.8.0
+#addin nuget:?package=Cake.Codecov&version=0.7.0
 
-#tool nuget:?package=MSBuild.SonarQube.Runner.Tool
-#addin nuget:?package=Cake.Sonar
+#tool nuget:?package=MSBuild.SonarQube.Runner.Tool&version=4.6.0
+#addin nuget:?package=Cake.Sonar&version=1.1.22
 
 var target = Argument("target", "Default");
 
 var buildConfiguration = "Release";
 
-var projectName = "Sql.Analyzer";
-var testProjectName = "Sql.Analyzer.Test";
+var projectName = "SqlAnalyzer.Net";
+var testProjectName = "SqlAnalyzer.Net.Test";
 
 var solutionFile = string.Format("./src/{0}.sln", projectName);
-var projectFolder = string.Format("./src/{0}/{0}/", projectName);
-var vsixProjectFolder = string.Format("./src/{0}/Sql.Analyzer.Vsix/", projectName);
-var testProjectFolder = string.Format("./src/{0}/{1}/", projectName, testProjectName);
+var projectFolder = string.Format("./src/{0}/", projectName);
+var vsixProjectFolder = string.Format("./src/SqlAnalyzer.Net.Vsix/", projectName);
+var testProjectFolder = string.Format("./src/{1}/", projectName, testProjectName);
 var testProjectFile = string.Format("{0}{1}.csproj", testProjectFolder, testProjectName);
 
 var vsixFile = string.Format("{0}bin/{1}/{2}.vsix", vsixProjectFolder, buildConfiguration, projectName);
@@ -94,8 +94,8 @@ Task("SonarBegin")
      SonarBegin(new SonarBeginSettings {
         Url = "https://sonarcloud.io",
         Login = EnvironmentVariable("sonar:apikey"),
-        Key = "sql-analyzer",
-        Name = "Sql.Analyzer",
+        Key = "sql-analyzer-net",
+        Name = "SqlAnalyzer.Net",
         ArgumentCustomization = args => args
             .Append($"/o:olsh-github"),
         Version = "1.0.0.0"

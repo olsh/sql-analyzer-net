@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>Sql.Analyzer</PackageId>
+    <PackageId>SqlAnalyzer.Net</PackageId>
     <Authors>Oleg Shevchenko</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description>Sql.Analyzer</Description>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <Description>SqlAnalyzer.Net</Description>
+    <PackageReleaseNotes>https://github.com/olsh/sql-analyzer/releases</PackageReleaseNotes>
     <Copyright>Copyright</Copyright>
     <PackageTags>analyzers, sql, dapper</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
@@ -31,7 +31,7 @@
 
   <ItemGroup>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
-      <_Parameter1>Sql.Analyzer.UnitTests</_Parameter1>
+      <_Parameter1>SqlAnalyzer.Net.Test</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
 

@@ -15,8 +15,8 @@
     <ProjectGuid>{DE372B5D-B2D2-41B1-A88F-A3D7B651FF29}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sql.Analyzer.Vsix</RootNamespace>
-    <AssemblyName>Sql.Analyzer</AssemblyName>
+    <RootNamespace>SqlAnalyzer.Net.Vsix</RootNamespace>
+    <AssemblyName>SqlAnalyzer.Net</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <IncludeAssemblyInVSIXContainer>false</IncludeAssemblyInVSIXContainer>
@@ -54,9 +54,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sql.Analyzer\Sql.Analyzer.csproj">
-      <Project>{D0D603A9-CD83-4437-AEAE-E393704BEE67}</Project>
-      <Name>Sql.Analyzer</Name>
+    <ProjectReference Include="..\SqlAnalyzer.Net\SqlAnalyzer.Net.csproj">
+      <Project>{08c83591-0862-4e3d-a273-646b8af13032}</Project>
+      <Name>SqlAnalyzer.Net</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
