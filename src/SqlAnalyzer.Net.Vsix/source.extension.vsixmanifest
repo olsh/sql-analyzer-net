@@ -6,7 +6,7 @@
         <Description xml:space="preserve">A highly experimental Roslyn-based analyzer for SQL related stuff in .NET</Description>
         <MoreInfo>https://github.com/olsh/sql-analyzer-net</MoreInfo>
         <GettingStartedGuide>https://github.com/olsh/sql-analyzer-net</GettingStartedGuide>
-        <ReleaseNotes>https://github.com/olsh/sql-analyzer-net</ReleaseNotes>
+        <ReleaseNotes>https://github.com/olsh/sql-analyzer-net/releases</ReleaseNotes>
         <Tags>sql analyzer dapper</Tags>
     </Metadata>
     <Installation>
@@ -16,11 +16,11 @@
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     </Dependencies>
     <Assets>
-        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="SqlAnalyzer.Net" Path="|SqlAnalyzer.Net|"/>
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="SqlAnalyzer.Net" Path="|SqlAnalyzer.Net|" />
         <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="SqlAnalyzer.Net" Path="|SqlAnalyzer.Net|"/>
     </Assets>
     <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,16.0)" DisplayName="Visual Studio core editor" />
-        <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[15.0,16.0)" DisplayName="Roslyn Language Services" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[15.0,17.0)" DisplayName="Visual Studio core editor" />
+        <Prerequisite Id="Microsoft.VisualStudio.Component.Roslyn.LanguageServices" Version="[15.0,17.0)" DisplayName="Roslyn Language Services" />
     </Prerequisites>
 </PackageManifest>

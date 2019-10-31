@@ -57,6 +57,8 @@
     <ProjectReference Include="..\SqlAnalyzer.Net\SqlAnalyzer.Net.csproj">
       <Project>{08c83591-0862-4e3d-a273-646b8af13032}</Project>
       <Name>SqlAnalyzer.Net</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
