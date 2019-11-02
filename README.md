@@ -50,3 +50,16 @@ var dog = connection.QuerySingle<Dog>("select * from dogs");
 ```
 
 https://github.com/StackExchange/Dapper#performance
+
+### SQL004: Using 'QueryMultiple' method is not optimal here
+
+Noncompliant Code Example:  
+```csharp
+var multi = connection.QueryMultiple("select * from dogs");
+var dogs = multi.Read<Dog>();
+```
+
+Compliant Solution:  
+```csharp
+var dogs = connection.Query<Dog>("select * from dogs");
+```
