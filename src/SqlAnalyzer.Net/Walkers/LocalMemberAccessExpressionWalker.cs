@@ -8,8 +8,6 @@ namespace SqlAnalyzer.Net.Walkers
 {
     public class LocalMemberAccessExpressionWalker : CSharpSyntaxWalker
     {
-        public readonly List<string> MethodCalls = new List<string>();
-
         private readonly string _variableName;
 
         public LocalMemberAccessExpressionWalker(string variableName)
@@ -17,15 +15,20 @@ namespace SqlAnalyzer.Net.Walkers
             _variableName = variableName;
         }
 
+        public List<string> MethodCalls { get; } = new List<string>();
+
         public override void VisitMemberAccessExpression(MemberAccessExpressionSyntax node)
         {
-            var identifierNames = node.DescendantNodes().OfType<SimpleNameSyntax>().ToList();
+            var identifierNames = node.DescendantNodes()
+                .OfType<SimpleNameSyntax>()
+                .ToList();
             if (identifierNames.Count < 2)
             {
                 return;
             }
 
-            if (identifierNames[0].Identifier.Text != _variableName)
+            if (identifierNames[0]
+                    .Identifier.Text != _variableName)
             {
                 return;
             }

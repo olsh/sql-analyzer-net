@@ -47,6 +47,24 @@ namespace SqlAnalyzer.Net.Test
             VerifyCSharpDiagnostic(code, expected);
         }
 
+        [TestMethod]
+        public void QueryMultipleWithFirstOrDefault_AnalyzerTriggered()
+        {
+            var code = ReadTestData("QueryMultipleWithFirstOrDefault.cs");
+
+            var expected = new DiagnosticResult
+                               {
+                                   Id = DapperQueryMisuseAnalyzer.DiagnosticId,
+                                   Message = string.Format(
+                                       DapperQueryMisuseAnalyzer.MessageFormat,
+                                       "ReadFirstOrDefault"),
+                                   Severity = DiagnosticSeverity.Warning,
+                                   Locations = new[] { new DiagnosticResultLocation("Test0.cs", 16, 17) }
+                               };
+
+            VerifyCSharpDiagnostic(code, expected);
+        }
+
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
             return new DapperQueryMisuseAnalyzer();

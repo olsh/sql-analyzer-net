@@ -13,7 +13,7 @@ namespace Sql.Analyzer.Test.TestData
             var sql = new SqlConnection();
             using (var multi = await sql.QueryMultipleAsync("sql"))
             {
-                await multi.ReadAsync<int>().FirstOrDefault();
+                multi.Read<int>().FirstOrDefault();
                 await multi.ReadAsync<int>().ConfigureAwait(false);
             }
         }

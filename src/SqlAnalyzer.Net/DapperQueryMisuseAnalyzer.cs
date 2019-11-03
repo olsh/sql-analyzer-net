@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -19,7 +20,8 @@ namespace SqlAnalyzer.Net
 
         private const string Category = "API Guidance";
 
-        private static readonly string Description = "The 'Query' method is designed to select a collection. For a single entity, there are most efficient alternatives like 'QueryFirst' or  'QuerySingle'.";
+        private static readonly string Description =
+            "The 'Query' method is designed to select a collection. For a single entity, there are most efficient alternatives like 'QueryFirst' or  'QuerySingle'.";
 
         private static readonly string Title = "Using 'Query' method is not optimal here";
 
@@ -33,6 +35,10 @@ namespace SqlAnalyzer.Net
             Description,
             "https://github.com/olsh/sql-analyzer-net#sql003-using-query-method-is-not-optimal-here");
 
+        private static readonly Regex DapperQueryRegex = new Regex(
+            @"^(?<MethodPrefix>Query|Read).*",
+            RegexOptions.Compiled);
+
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
         public override void Initialize(AnalysisContext context)
@@ -44,38 +50,43 @@ namespace SqlAnalyzer.Net
         {
             var invocationExpressionSyntax = (InvocationExpressionSyntax)context.Node;
 
-            var methodSymbol = context.SemanticModel.GetSymbolInfo(invocationExpressionSyntax).Symbol as IMethodSymbol;
+            var methodSymbol = context.SemanticModel.GetSymbolInfo(invocationExpressionSyntax)
+                                   .Symbol as IMethodSymbol;
             if (methodSymbol == null)
             {
                 return;
             }
 
-            var dapperClass = context.SemanticModel.GetDapperSqlMapperSymbol();
-            const string QueryPrefix = "Query";
-            if (methodSymbol.ContainingType != dapperClass || !methodSymbol.Name.StartsWith(QueryPrefix))
+            if (!methodSymbol.IsDapperMethod(context.SemanticModel))
             {
                 return;
             }
 
-            var firstInvocationExpression = invocationExpressionSyntax
-                    .Ancestors()
-                    .TakeWhile(n => !(n is StatementSyntax))
-                    .OfType<InvocationExpressionSyntax>()
-                    .FirstOrDefault();
+            var methodMatch = DapperQueryRegex.Match(methodSymbol.Name);
+            if (!methodMatch.Success)
+            {
+                return;
+            }
+
+            var firstInvocationExpression = invocationExpressionSyntax.Ancestors()
+                .TakeWhile(n => !(n is StatementSyntax))
+                .OfType<InvocationExpressionSyntax>()
+                .FirstOrDefault();
 
             if (firstInvocationExpression == null || firstInvocationExpression.ArgumentList.Arguments.Count != 0)
             {
                 return;
             }
 
-            var linqExtensionMethodSymbol = context.SemanticModel.GetSymbolInfo(firstInvocationExpression).Symbol as IMethodSymbol;
+            var linqExtensionMethodSymbol = context.SemanticModel.GetSymbolInfo(firstInvocationExpression)
+                                                .Symbol as IMethodSymbol;
             var linqEnumerableSymbol = context.SemanticModel.GetLinqEnumerableSymbol();
             if (linqExtensionMethodSymbol == null || linqExtensionMethodSymbol.ContainingType != linqEnumerableSymbol)
             {
                 return;
             }
 
-            var alternativeMethod = QueryPrefix + linqExtensionMethodSymbol.Name;
+            var alternativeMethod = methodMatch.Groups["MethodPrefix"] + linqExtensionMethodSymbol.Name;
             const string AsyncPostfix = "Async";
             if (methodSymbol.Name.EndsWith(AsyncPostfix))
             {
@@ -85,7 +96,8 @@ namespace SqlAnalyzer.Net
             var queryMethod = methodSymbol.ContainingType.GetMembers(alternativeMethod);
             if (queryMethod.Any())
             {
-                context.ReportDiagnostic(Diagnostic.Create(Rule, invocationExpressionSyntax.Expression.GetLocation(), alternativeMethod));
+                context.ReportDiagnostic(
+                    Diagnostic.Create(Rule, invocationExpressionSyntax.Expression.GetLocation(), alternativeMethod));
             }
         }
     }

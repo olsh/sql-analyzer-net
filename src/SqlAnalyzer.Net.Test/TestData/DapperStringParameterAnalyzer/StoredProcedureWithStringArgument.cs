@@ -6,7 +6,7 @@ using Dapper;
 
 namespace Sql.Analyzer.Test.TestData
 {
-    public class InlineSqlWithStringParameterTestData
+    public class Program
     {
         private static async Task Main(string[] args)
         {
