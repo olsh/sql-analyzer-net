@@ -65,6 +65,14 @@ namespace SqlAnalyzer.Net.Test
             VerifyCSharpDiagnostic(code, expected);
         }
 
+        [TestMethod]
+        public void QueryWithSingleWithMultipleEntities_AnalyzerNotTriggered()
+        {
+            var code = ReadTestData("QueryWithSingleWithMultipleEntities.cs");
+
+            VerifyCSharpDiagnostic(code);
+        }
+
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
             return new DapperQueryMisuseAnalyzer();

@@ -12,6 +12,7 @@
     <Compile Remove="TestData\DapperQueryMisuseAnalyzer\QueryMultipleWithFirstOrDefault.cs" />
     <Compile Remove="TestData\DapperQueryMisuseAnalyzer\QueryWithFirstOrDefault.cs" />
     <Compile Remove="TestData\DapperQueryMisuseAnalyzer\QueryWithSingleAsync.cs" />
+    <Compile Remove="TestData\DapperQueryMisuseAnalyzer\QueryWithSingleWithMultipleEntities.cs" />
     <Compile Remove="TestData\DapperQueryMultipleMisuseAnalyzer\QueryMultipleWithMultipleReads.cs" />
     <Compile Remove="TestData\DapperQueryMultipleMisuseAnalyzer\QueryMultipleWithSIngleRead.cs" />
     <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlWithDbStringArgument.cs" />
@@ -33,6 +34,7 @@
     <EmbeddedResource Include="TestData\DapperQueryMisuseAnalyzer\QueryMultipleWithFirstOrDefault.cs" />
     <EmbeddedResource Include="TestData\DapperQueryMisuseAnalyzer\QueryWithSingleAsync.cs" />
     <EmbeddedResource Include="TestData\DapperQueryMisuseAnalyzer\QueryWithFirstOrDefault.cs" />
+    <EmbeddedResource Include="TestData\DapperQueryMisuseAnalyzer\QueryWithSingleWithMultipleEntities.cs" />
     <EmbeddedResource Include="TestData\DapperQueryMultipleMisuseAnalyzer\QueryMultipleWithMultipleReads.cs" />
     <EmbeddedResource Include="TestData\DapperQueryMultipleMisuseAnalyzer\QueryMultipleWithSingleRead.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlWithDbStringArgument.cs" />

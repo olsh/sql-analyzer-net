@@ -93,8 +93,11 @@ namespace SqlAnalyzer.Net
                 alternativeMethod += AsyncPostfix;
             }
 
-            var queryMethod = methodSymbol.ContainingType.GetMembers(alternativeMethod);
-            if (queryMethod.Any())
+            // Found method in Dapper library by name
+            var alternativeMethodSymbol = methodSymbol.ContainingType.GetMembers(alternativeMethod);
+
+            // Check that generics count match
+            if (alternativeMethodSymbol.Any(m => m is IMethodSymbol ms && ms.TypeArguments.Length == methodSymbol.TypeArguments.Length))
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(Rule, invocationExpressionSyntax.Expression.GetLocation(), alternativeMethod));
