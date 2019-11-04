@@ -44,6 +44,22 @@ namespace SqlAnalyzer.Net.Test
         }
 
         [TestMethod]
+        public void InlineSqlQueryMultipleWithStringArgument_AnalyzerTriggered()
+        {
+            var code = ReadTestData("InlineSqlQueryMultipleWithStringArgument.cs");
+
+            var expected = new DiagnosticResult
+                               {
+                                   Id = DapperStringParameterAnalyzer.DiagnosticId,
+                                   Message = string.Format(DapperStringParameterAnalyzer.MessageFormat, "id"),
+                                   Severity = DiagnosticSeverity.Warning,
+                                   Locations = new[] { new DiagnosticResultLocation("Test0.cs", 13, 52) }
+                               };
+
+            VerifyCSharpDiagnostic(code, expected);
+        }
+
+        [TestMethod]
         public void StoredProcedureWithStringArgument_NotTriggered()
         {
             var code = ReadTestData("StoredProcedureWithStringArgument.cs");

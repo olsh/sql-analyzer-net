@@ -15,6 +15,7 @@
     <Compile Remove="TestData\DapperQueryMisuseAnalyzer\QueryWithSingleWithMultipleEntities.cs" />
     <Compile Remove="TestData\DapperQueryMultipleMisuseAnalyzer\QueryMultipleWithMultipleReads.cs" />
     <Compile Remove="TestData\DapperQueryMultipleMisuseAnalyzer\QueryMultipleWithSIngleRead.cs" />
+    <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlQueryMultipleWithStringArgument.cs" />
     <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlWithDbStringArgument.cs" />
     <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlWithStringArgument.cs" />
     <Compile Remove="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
@@ -39,6 +40,7 @@
     <EmbeddedResource Include="TestData\DapperQueryMultipleMisuseAnalyzer\QueryMultipleWithSingleRead.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlWithDbStringArgument.cs" />
     <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
+    <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlQueryMultipleWithStringArgument.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlWithStringArgument.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
   </ItemGroup>
