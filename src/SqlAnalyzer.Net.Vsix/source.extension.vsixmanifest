@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="SqlAnalyzer.Net.c99afd07-7621-4f0c-ab43-a1ff9b111c67" Version="1.0.0" Language="en-US" Publisher="Oleg Shevchenko"/>
+        <Identity Id="SqlAnalyzer.Net.c99afd07-7621-4f0c-ab43-a1ff9b111c67" Version="1.1.0" Language="en-US" Publisher="Oleg Shevchenko"/>
         <DisplayName>SqlAnalyzer.Net</DisplayName>
         <Description xml:space="preserve">A highly experimental Roslyn-based analyzer for SQL related stuff in .NET</Description>
         <MoreInfo>https://github.com/olsh/sql-analyzer-net</MoreInfo>
