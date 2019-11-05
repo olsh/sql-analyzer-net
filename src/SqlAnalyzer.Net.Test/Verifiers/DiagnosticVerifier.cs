@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using SqlAnalyzer.Net.Test.Helpers;
+// ReSharper disable All
 
 namespace SqlAnalyzer.Net.Test
 {

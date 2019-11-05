@@ -73,6 +73,32 @@ namespace SqlAnalyzer.Net.Test
             VerifyCSharpDiagnostic(code, expected);
         }
 
+        [TestMethod]
+        public void InlineSqlDynamicParameters_AnalyzerTriggered()
+        {
+            var code = ReadTestData("InlineSqlDynamicParameters.cs");
+
+            var expected = new DiagnosticResult
+                               {
+                                   Id = DapperParametersMatchingAnalyzer.DiagnosticId,
+                                   Message = string.Format(
+                                       DapperParametersMatchingAnalyzer.MessageFormatSqlVariableNotFound,
+                                       "not_found"),
+                                   Severity = DiagnosticSeverity.Warning,
+                                   Locations = new[] { new DiagnosticResultLocation("Test0.cs", 15, 13) }
+                               };
+
+            VerifyCSharpDiagnostic(code, expected);
+        }
+
+        [TestMethod]
+        public void InlineSqlDynamicParametersWithConstructor_AnalyzerNotTriggered()
+        {
+            var code = ReadTestData("InlineSqlDynamicParametersWithConstructor.cs");
+
+            VerifyCSharpDiagnostic(code);
+        }
+
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
             return new DapperParametersMatchingAnalyzer();

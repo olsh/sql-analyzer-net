@@ -10,12 +10,14 @@
     <PackageId>SqlAnalyzer.Net</PackageId>
     <Authors>Oleg Shevchenko</Authors>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Description>SqlAnalyzer.Net</Description>
+    <Description>A Roslyn-based analyzer for SQL related stuff in .NET</Description>
     <PackageReleaseNotes>https://github.com/olsh/sql-analyzer-net/releases</PackageReleaseNotes>
-    <Copyright>Copyright</Copyright>
     <PackageTags>analyzers, sql, dapper</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <Version>1.1.0</Version>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/olsh/todoist-net</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/olsh/sql-analyzer-net/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>

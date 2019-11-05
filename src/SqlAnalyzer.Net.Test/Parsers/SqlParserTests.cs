@@ -36,7 +36,7 @@ namespace SqlAnalyzer.Net.Test.Parsers
         [TestMethod]
         public void FindSqlVariables_Identity()
         {
-            var sql = 
+            var sql =
                 @"SELECT id, @@IDENTITY 
                 FROM dbo.table
                 WHERE name = @name;";

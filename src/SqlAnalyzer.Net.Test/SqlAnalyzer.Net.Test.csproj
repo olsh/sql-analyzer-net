@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlDeclaredVariableParameters.cs" />
+    <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlDynamicParameters.cs" />
+    <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlDynamicParametersWithConstructor.cs" />
     <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
     <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedSqlVariable.cs" />
     <Compile Remove="TestData\DapperParametersMatchingAnalyzer\InlineSqlWithConstUnmatchedParameters.cs" />
@@ -29,6 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlDynamicParametersWithConstructor.cs" />
+    <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlDynamicParameters.cs" />
     <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlDeclaredVariableParameters.cs" />
     <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlUnmatchedSqlVariable.cs" />
     <EmbeddedResource Include="TestData\DapperParametersMatchingAnalyzer\InlineSqlWithConstUnmatchedParameters.cs" />

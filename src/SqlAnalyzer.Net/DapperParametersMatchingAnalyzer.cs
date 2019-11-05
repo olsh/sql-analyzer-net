@@ -10,6 +10,7 @@ using Microsoft.CodeAnalysis.Diagnostics;
 
 using SqlAnalyzer.Net.Extensions;
 using SqlAnalyzer.Net.Parsers;
+using SqlAnalyzer.Net.Walkers;
 
 namespace SqlAnalyzer.Net
 {
@@ -18,9 +19,9 @@ namespace SqlAnalyzer.Net
     {
         public const string DiagnosticId = "SQL002";
 
-        public const string MessageFormatSqlVariableNotFound = "SQL variable not found for argument '{0}'";
-
         public const string MessageFormatCsharpArgumentNotFound = "Argument not found for SQL variable '{0}'";
+
+        public const string MessageFormatSqlVariableNotFound = "SQL variable not found for argument '{0}'";
 
         private const string Category = "API Guidance";
 
@@ -51,6 +52,44 @@ namespace SqlAnalyzer.Net
         public override void Initialize(AnalysisContext context)
         {
             context.RegisterSyntaxNodeAction(AnalyzeInvocationExpression, SyntaxKind.InvocationExpression);
+        }
+
+        private static ICollection<string> FindParameters(SyntaxNodeAnalysisContext context, ArgumentSyntax argument)
+        {
+            var symbol = context.SemanticModel.GetSymbolInfo(argument.Expression).Symbol;
+            if (symbol == null)
+            {
+                return null;
+            }
+
+            if (symbol is IMethodSymbol methodSymbol)
+            {
+                return methodSymbol.Parameters.Select(p => p.Name.Trim('@')).ToList();
+            }
+
+            if (symbol is ILocalSymbol localSymbol && localSymbol.IsDapperDynamicParameter(context.SemanticModel))
+            {
+                var methodDeclarationSyntax = argument
+                    .Expression
+                    .AncestorsAndSelf()
+                    .OfType<MethodDeclarationSyntax>()
+                    .FirstOrDefault();
+                if (methodDeclarationSyntax == null)
+                {
+                    return null;
+                }
+
+                var dapperAddInvocationExpressionWalker = new DapperAddInvocationExpressionWalker(symbol.Name);
+                dapperAddInvocationExpressionWalker.Visit(methodDeclarationSyntax.Body);
+                if (!dapperAddInvocationExpressionWalker.IsAllParametersStatic)
+                {
+                    return null;
+                }
+
+                return dapperAddInvocationExpressionWalker.SqlParameters.Select(p => p.Trim('@')).ToList();
+            }
+
+            return null;
         }
 
         private void AnalyzeInvocationExpression(SyntaxNodeAnalysisContext context)
@@ -89,10 +128,9 @@ namespace SqlAnalyzer.Net
                     continue;
                 }
 
-                if (string.Equals(parameter.Name, "param")
-                    && context.SemanticModel.GetSymbolInfo(argument.Expression).Symbol is IMethodSymbol methodSymbol)
+                if (string.Equals(parameter.Name, "param"))
                 {
-                    sharpParameters = methodSymbol.Parameters.Select(p => p.Name.Trim('@')).ToList();
+                    sharpParameters = FindParameters(context, argument);
                 }
             }
 
@@ -101,7 +139,9 @@ namespace SqlAnalyzer.Net
                 return;
             }
 
-            foreach (var notFoundArgument in sqlVariables.Except(sharpParameters, StringComparer.InvariantCultureIgnoreCase))
+            foreach (var notFoundArgument in sqlVariables.Except(
+                sharpParameters,
+                StringComparer.InvariantCultureIgnoreCase))
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(
@@ -110,7 +150,9 @@ namespace SqlAnalyzer.Net
                         notFoundArgument));
             }
 
-            foreach (var notFoundVariable in sharpParameters.Except(sqlVariables, StringComparer.InvariantCultureIgnoreCase))
+            foreach (var notFoundVariable in sharpParameters.Except(
+                sqlVariables,
+                StringComparer.InvariantCultureIgnoreCase))
             {
                 context.ReportDiagnostic(
                     Diagnostic.Create(

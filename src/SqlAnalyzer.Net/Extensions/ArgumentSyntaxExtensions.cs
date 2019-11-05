@@ -9,10 +9,15 @@ namespace SqlAnalyzer.Net.Extensions
     public static class ArgumentSyntaxExtensions
     {
         /// <summary>
-        ///     Returns the parameter to which this argument is passed. If <paramref name="allowParams" />
-        ///     is true, the last parameter will be returned if it is params parameter and the index of
-        ///     the specified argument is greater than the number of parameters.
+        /// Returns the parameter to which this argument is passed. If <paramref name="allowParams" />
+        /// is true, the last parameter will be returned if it is params parameter and the index of
+        /// the specified argument is greater than the number of parameters.
         /// </summary>
+        /// <param name="argument">The argument.</param>
+        /// <param name="semanticModel">The semantic model.</param>
+        /// <param name="allowParams">if set to <c>true</c> [allow parameters].</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The parameter symbol.</returns>
         public static IParameterSymbol DetermineParameter(
             this ArgumentSyntax argument,
             SemanticModel semanticModel,
