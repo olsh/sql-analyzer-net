@@ -42,5 +42,22 @@ namespace SqlAnalyzer.Net.Extensions
 
             return true;
         }
+
+        public static bool IsSqlCommandExecuteMethod(this InvocationExpressionSyntax invocationExpressionSyntax, SemanticModel semanticModel)
+        {
+            var methodSymbol = semanticModel.GetSymbolInfo(invocationExpressionSyntax).Symbol as IMethodSymbol;
+            if (methodSymbol == null)
+            {
+                return false;
+            }
+
+            var sqlCommand = semanticModel.Compilation.GetTypeByMetadataName("System.Data.SqlClient.SqlCommand");
+            if (methodSymbol.ContainingType == sqlCommand && (methodSymbol.Name.StartsWith("Execute") || methodSymbol.Name.StartsWith("BeginExecute")))
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

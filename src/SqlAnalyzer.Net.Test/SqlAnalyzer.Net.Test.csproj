@@ -27,6 +27,9 @@
     <Compile Remove="TestData\InlineSqlWithConstUnmatchedParameters.cs" />
     <Compile Remove="TestData\InlineSqlWithDbStringArgumentTestData.cs" />
     <Compile Remove="TestData\InlineSqlWithStringArgumentTestData.cs" />
+    <Compile Remove="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlAddWIthValueUnmatchedParameters.cs" />
+    <Compile Remove="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlPropertyUnmatchedParameters.cs" />
+    <Compile Remove="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
     <Compile Remove="TestData\StoredProcedureWithStringArgumentTestData.cs" />
   </ItemGroup>
 
@@ -47,6 +50,9 @@
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlQueryMultipleWithStringArgument.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlWithStringArgument.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
+    <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlPropertyUnmatchedParameters.cs" />
+    <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlAddWithValueUnmatchedParameters.cs" />
+    <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,7 +66,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.3.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>

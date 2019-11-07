@@ -6,11 +6,11 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace SqlAnalyzer.Net.Walkers
 {
-    public class DapperAddInvocationExpressionWalker : CSharpSyntaxWalker
+    public class DapperDynamicParametersWalker : CSharpSyntaxWalker
     {
         private readonly string _variableName;
 
-        public DapperAddInvocationExpressionWalker(string variableName)
+        public DapperDynamicParametersWalker(string variableName)
         {
             _variableName = variableName;
             IsAllParametersStatic = true;
@@ -36,8 +36,8 @@ namespace SqlAnalyzer.Net.Walkers
                 return;
             }
 
-            var constructor = constructors.First();
-            if (constructor.ArgumentList == null)
+            var constructor = constructors.FirstOrDefault();
+            if (constructor?.ArgumentList == null)
             {
                 return;
             }

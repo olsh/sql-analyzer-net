@@ -2,6 +2,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using SqlAnalyzer.Net.Rules;
 using SqlAnalyzer.Net.Test.Helpers;
 
 namespace SqlAnalyzer.Net.Test
@@ -26,9 +27,9 @@ namespace SqlAnalyzer.Net.Test
 
             var expected = new DiagnosticResult
                                {
-                                   Id = DapperParametersMatchingAnalyzer.DiagnosticId,
+                                   Id = ParametersMatchingRule.DiagnosticId,
                                    Message = string.Format(
-                                       DapperParametersMatchingAnalyzer.MessageFormatCsharpArgumentNotFound,
+                                       ParametersMatchingRule.MessageFormatCsharpArgumentNotFound,
                                        "not_found"),
                                    Severity = DiagnosticSeverity.Warning,
                                    Locations = new[] { new DiagnosticResultLocation("Test0.cs", 13, 13) }
@@ -44,9 +45,9 @@ namespace SqlAnalyzer.Net.Test
 
             var expected = new DiagnosticResult
                                {
-                                   Id = DapperParametersMatchingAnalyzer.DiagnosticId,
+                                   Id = ParametersMatchingRule.DiagnosticId,
                                    Message = string.Format(
-                                       DapperParametersMatchingAnalyzer.MessageFormatSqlVariableNotFound,
+                                       ParametersMatchingRule.MessageFormatSqlVariableNotFound,
                                        "param"),
                                    Severity = DiagnosticSeverity.Warning,
                                    Locations = new[] { new DiagnosticResultLocation("Test0.cs", 13, 13) }
@@ -62,9 +63,9 @@ namespace SqlAnalyzer.Net.Test
 
             var expected = new DiagnosticResult
                                {
-                                   Id = DapperParametersMatchingAnalyzer.DiagnosticId,
+                                   Id = ParametersMatchingRule.DiagnosticId,
                                    Message = string.Format(
-                                       DapperParametersMatchingAnalyzer.MessageFormatCsharpArgumentNotFound,
+                                       ParametersMatchingRule.MessageFormatCsharpArgumentNotFound,
                                        "not_found"),
                                    Severity = DiagnosticSeverity.Warning,
                                    Locations = new[] { new DiagnosticResultLocation("Test0.cs", 14, 13) }
@@ -80,9 +81,9 @@ namespace SqlAnalyzer.Net.Test
 
             var expected = new DiagnosticResult
                                {
-                                   Id = DapperParametersMatchingAnalyzer.DiagnosticId,
+                                   Id = ParametersMatchingRule.DiagnosticId,
                                    Message = string.Format(
-                                       DapperParametersMatchingAnalyzer.MessageFormatSqlVariableNotFound,
+                                       ParametersMatchingRule.MessageFormatSqlVariableNotFound,
                                        "not_found"),
                                    Severity = DiagnosticSeverity.Warning,
                                    Locations = new[] { new DiagnosticResultLocation("Test0.cs", 15, 13) }

@@ -80,12 +80,17 @@ namespace SqlAnalyzer.Net.Extensions
 
         public static string TryGetArgumentStringValue(this ArgumentSyntax argument, SemanticModel semanticModel)
         {
-            if (argument.Expression is LiteralExpressionSyntax literalExpressionSyntax)
+            return argument.Expression.TryGetArgumentStringValue(semanticModel);
+        }
+
+        public static string TryGetArgumentStringValue(this ExpressionSyntax expression, SemanticModel semanticModel)
+        {
+            if (expression is LiteralExpressionSyntax literalExpressionSyntax)
             {
                 return literalExpressionSyntax.Token.Text;
             }
 
-            var symbolVariable = semanticModel.GetConstantValue(argument.Expression);
+            var symbolVariable = semanticModel.GetConstantValue(expression);
             if (symbolVariable.HasValue)
             {
                 return symbolVariable.Value?.ToString() ?? string.Empty;

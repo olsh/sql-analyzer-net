@@ -30,13 +30,30 @@ https://github.com/StackExchange/Dapper/blob/master/Readme.md#ansi-strings-and-v
 ### SQL002: SQL parameters mismatch
 
 Noncompliant Code Example:  
+Dapper
 ```csharp
 var dog = connection.Query<Dog>("select Age = @Age, Id = @Id", new { Id = guid });
 ```
 
+SqlCommand
+```csharp
+var sql = new SqlCommand("select Age = @Age, Id = @Id");
+sql.Parameters.AddWithValue("@Id", guid);
+sql.ExecuteNonQuery();
+```
+
 Compliant Solution:  
+Dapper
 ```csharp
 var dog = connection.Query<Dog>("select Age = @Age, Id = @Id", new { Age = (int?)null, Id = guid });
+```
+
+SqlCommand
+```csharp
+var sql = new SqlCommand("select Age = @Age, Id = @Id");
+sql.Parameters.AddWithValue("@Id", guid);
+sql.Parameters.AddWithValue("@Age", 42);
+sql.ExecuteNonQuery();
 ```
 
 ### SQL003: Using 'Query' method is not optimal here
