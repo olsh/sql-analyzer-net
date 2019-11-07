@@ -8,7 +8,6 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
 using SqlAnalyzer.Net.Extensions;
-using SqlAnalyzer.Net.Parsers;
 using SqlAnalyzer.Net.Rules;
 using SqlAnalyzer.Net.Walkers;
 

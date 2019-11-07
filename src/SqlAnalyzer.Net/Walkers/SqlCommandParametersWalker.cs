@@ -35,15 +35,14 @@ namespace SqlAnalyzer.Net.Walkers
         {
             if (node.Left is MemberAccessExpressionSyntax leftAccessExpression
                 && leftAccessExpression.Expression is SimpleNameSyntax leftIdentifier
-                && leftIdentifier.Identifier.Text == _sqlCommandSymbol.Name )
+                && leftIdentifier.Identifier.Text == _sqlCommandSymbol.Name)
             {
                 const string CommandTypeIdentifier = "CommandType";
                 if (leftAccessExpression.Name.Identifier.Text == CommandTypeIdentifier
                     && node.Right is MemberAccessExpressionSyntax rightAccessExpression
-                    && rightAccessExpression.Expression is SimpleNameSyntax rightIdentifier
-                    && rightIdentifier.Identifier.Text == CommandTypeIdentifier)
+                    && rightAccessExpression is MemberAccessExpressionSyntax rightIdentifier)
                 {
-                    IsInlineSql = rightAccessExpression.Name.Identifier.Text == "Text";
+                    IsInlineSql = rightIdentifier.Name.Identifier.Text == "Text";
                 }
                 else if (leftAccessExpression.Name.Identifier.Text == "CommandText")
                 {

@@ -30,6 +30,7 @@
     <Compile Remove="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlAddWIthValueUnmatchedParameters.cs" />
     <Compile Remove="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlPropertyUnmatchedParameters.cs" />
     <Compile Remove="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
+    <Compile Remove="TestData\SqlCommandParametersMatchingAnalyzer\StoredProcedureUnmatchedParameters.cs" />
     <Compile Remove="TestData\StoredProcedureWithStringArgumentTestData.cs" />
   </ItemGroup>
 
@@ -52,6 +53,7 @@
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
     <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlPropertyUnmatchedParameters.cs" />
     <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlAddWithValueUnmatchedParameters.cs" />
+    <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\StoredProcedureUnmatchedParameters.cs" />
     <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlUnmatchedParameters.cs" />
   </ItemGroup>
 

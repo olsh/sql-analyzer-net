@@ -13,6 +13,14 @@ namespace SqlAnalyzer.Net.Test
         protected override string TestDataFolder => "SqlCommandParametersMatchingAnalyzer";
 
         [TestMethod]
+        public void StoredProcedureUnmatchedParameters_NotTriggered()
+        {
+            var code = ReadTestData("StoredProcedureUnmatchedParameters.cs");
+
+            VerifyCSharpDiagnostic(code);
+        }
+
+        [TestMethod]
         public void InlineSqlUnmatchedParameters_AnalyzerTriggered()
         {
             var code = ReadTestData("InlineSqlUnmatchedParameters.cs");
