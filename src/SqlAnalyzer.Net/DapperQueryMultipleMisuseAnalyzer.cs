@@ -32,7 +32,7 @@ namespace SqlAnalyzer.Net
             DiagnosticSeverity.Warning,
             true,
             Description,
-            "https://github.com/olsh/sql-analyzer-net#sql004-using-querymultiple-method-is-not-optimal-here");
+            "https://github.com/olsh/sql-analyzer-net#sql004");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

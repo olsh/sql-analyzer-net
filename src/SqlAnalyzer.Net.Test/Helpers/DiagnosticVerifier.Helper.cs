@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.ComponentModel;
 using System.Data.Common;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -11,6 +12,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
+// ReSharper disable once StyleCop.SA1512
 // ReSharper disable All
 
 namespace SqlAnalyzer.Net.Test
@@ -52,6 +54,9 @@ namespace SqlAnalyzer.Net.Test
 
         private static readonly MetadataReference ComponentReference =
             MetadataReference.CreateFromFile(typeof(Component).Assembly.Location);
+
+        private static readonly MetadataReference EntityFrameworkReference =
+            MetadataReference.CreateFromFile(typeof(DbContext).Assembly.Location);
 
         private static readonly MetadataReference NetStandard = MetadataReference.CreateFromFile(Assembly.Load("netstandard, Version=2.0.0.0").Location);
 
@@ -146,6 +151,7 @@ namespace SqlAnalyzer.Net.Test
                 .AddMetadataReference(projectId, SystemDataSqlClientReference)
                 .AddMetadataReference(projectId, NetStandard)
                 .AddMetadataReference(projectId, ComponentReference)
+                .AddMetadataReference(projectId, EntityFrameworkReference)
                 .AddMetadataReference(projectId, SystemRuntimeReference)
                 .AddMetadataReference(projectId, DapperReference);
 

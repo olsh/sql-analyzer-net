@@ -30,7 +30,7 @@ namespace SqlAnalyzer.Net
             DiagnosticSeverity.Warning,
             true,
             Description,
-            "https://github.com/olsh/sql-analyzer-net#sql001-sql-type-is-not-specified");
+            "https://github.com/olsh/sql-analyzer-net#sql001");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

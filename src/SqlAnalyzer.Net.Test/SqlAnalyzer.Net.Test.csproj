@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,6 +21,8 @@
     <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlWithDbStringArgument.cs" />
     <Compile Remove="TestData\DapperStringParameterAnalyzer\InlineSqlWithStringArgument.cs" />
     <Compile Remove="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
+    <Compile Remove="TestData\EntityFrameworkSaveChangesInLoopAnalyzer\SaveChangesInForLoop.cs" />
+    <Compile Remove="TestData\EntityFrameworkSaveChangesInLoopAnalyzer\SaveChangesOutsideOfLoop.cs" />
     <Compile Remove="TestData\InlineSqlDeclaredVariableParameters.cs" />
     <Compile Remove="TestData\InlineSqlUnmatchedParameters.cs" />
     <Compile Remove="TestData\InlineSqlUnmatchedSqlVariable.cs" />
@@ -51,6 +53,8 @@
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlQueryMultipleWithStringArgument.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\InlineSqlWithStringArgument.cs" />
     <EmbeddedResource Include="TestData\DapperStringParameterAnalyzer\StoredProcedureWithStringArgument.cs" />
+    <EmbeddedResource Include="TestData\EntityFrameworkSaveChangesInLoopAnalyzer\SaveChangesOutsideOfLoop.cs" />
+    <EmbeddedResource Include="TestData\EntityFrameworkSaveChangesInLoopAnalyzer\SaveChangesInForLoop.cs" />
     <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlPropertyUnmatchedParameters.cs" />
     <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\InlineSqlAddWithValueUnmatchedParameters.cs" />
     <EmbeddedResource Include="TestData\SqlCommandParametersMatchingAnalyzer\StoredProcedureUnmatchedParameters.cs" />
@@ -63,6 +67,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="EntityFramework" Version="6.3.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.6.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.10" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />

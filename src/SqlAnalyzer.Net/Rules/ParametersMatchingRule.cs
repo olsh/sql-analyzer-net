@@ -17,10 +17,6 @@ namespace SqlAnalyzer.Net.Rules
 
         public const string MessageFormatSqlVariableNotFound = "SQL variable not found for argument '{0}'";
 
-        private const string Category = "API Guidance";
-
-        private const string Title = "SQL parameters mismatch";
-
         internal static readonly DiagnosticDescriptor CsharpArgumentNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,
             Title,
@@ -29,7 +25,7 @@ namespace SqlAnalyzer.Net.Rules
             DiagnosticSeverity.Warning,
             true,
             Title,
-            "https://github.com/olsh/sql-analyzer-net#sql002-sql-parameters-mismatch");
+            "https://github.com/olsh/sql-analyzer-net#sql002");
 
         internal static readonly DiagnosticDescriptor SqlParameterNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,
@@ -39,6 +35,10 @@ namespace SqlAnalyzer.Net.Rules
             DiagnosticSeverity.Warning,
             true,
             Title);
+
+        private const string Category = "API Guidance";
+
+        private const string Title = "SQL parameters mismatch";
 
         public static void TryReportDiagnostics(
             string sqlText,

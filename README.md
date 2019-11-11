@@ -12,7 +12,8 @@ A Roslyn-based analyzer for SQL related stuff in .NET
 
 ## Analyzers
 
-### SQL001: SQL type is not specified
+### SQL001
+**SQL type is not specified**
 
 Noncompliant Code Example:  
 ```csharp
@@ -27,7 +28,8 @@ Query<Thing>("select * from Thing where Name = @Name", new {Name = new DbString 
 https://github.com/StackExchange/Dapper/blob/master/Readme.md#ansi-strings-and-varchar
 
 
-### SQL002: SQL parameters mismatch
+### SQL002
+**SQL parameters mismatch**
 
 Noncompliant Code Example:  
 Dapper
@@ -56,7 +58,8 @@ sql.Parameters.AddWithValue("@Age", 42);
 sql.ExecuteNonQuery();
 ```
 
-### SQL003: Using 'Query' method is not optimal here
+### SQL003
+**Using 'Query' method is not optimal here**
 
 Noncompliant Code Example:  
 ```csharp
@@ -70,7 +73,8 @@ var dog = connection.QuerySingle<Dog>("select * from dogs");
 
 https://github.com/StackExchange/Dapper#performance
 
-### SQL004: Using 'QueryMultiple' method is not optimal here
+### SQL004
+**Using 'QueryMultiple' method is not optimal here**
 
 Noncompliant Code Example:  
 ```csharp
@@ -81,4 +85,29 @@ var dogs = multi.Read<Dog>();
 Compliant Solution:  
 ```csharp
 var dogs = connection.Query<Dog>("select * from dogs");
+```
+
+### SQL005
+
+**Using 'SaveChanges' method in a loop can affect performance**
+
+Noncompliant Code Example:  
+```csharp
+var dbContext = new DbContext("test");
+for (int i = 0; i < 100; i++)
+{
+    dbContext.Entities.Add(new Entity(i));
+    s.SaveChanges();
+}
+```
+
+Compliant Solution:  
+```csharp
+var dbContext = new DbContext("test");
+for (int i = 0; i < 100; i++)
+{
+    dbContext.Entities.Add(new Entity(i));
+}
+
+s.SaveChanges();
 ```

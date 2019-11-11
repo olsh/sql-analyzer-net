@@ -59,5 +59,32 @@ namespace SqlAnalyzer.Net.Extensions
 
             return false;
         }
+
+        public static bool IsEntityFrameworkSaveChangesMethod(this InvocationExpressionSyntax invocationExpression, SemanticModel semanticModel)
+        {
+            var methodSymbol = semanticModel.GetSymbolInfo(invocationExpression).Symbol as IMethodSymbol;
+            if (methodSymbol == null)
+            {
+                return false;
+            }
+
+            if (!methodSymbol.Name.StartsWith("SaveChanges"))
+            {
+                return false;
+            }
+
+            var type = semanticModel.Compilation.GetTypeByMetadataName("System.Data.Entity.DbContext");
+            while (type != null)
+            {
+                if (methodSymbol.ContainingType == type)
+                {
+                    return true;
+                }
+
+                type = type.BaseType;
+            }
+
+            return false;
+        }
     }
 }
