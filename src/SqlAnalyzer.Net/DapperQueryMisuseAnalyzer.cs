@@ -33,7 +33,7 @@ namespace SqlAnalyzer.Net
             DiagnosticSeverity.Warning,
             true,
             Description,
-            "https://github.com/olsh/sql-analyzer-net#sql003");
+            "https://github.com/olsh/sql-analyzer-net/rules/SQL003.md");
 
         private static readonly Regex DapperQueryRegex = new Regex(
             @"^(?<MethodPrefix>Query|Read).*",

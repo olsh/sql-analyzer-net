@@ -25,7 +25,7 @@ namespace SqlAnalyzer.Net.Rules
             DiagnosticSeverity.Warning,
             true,
             Title,
-            "https://github.com/olsh/sql-analyzer-net#sql002");
+            "https://github.com/olsh/sql-analyzer-net/rules/SQL002.md");
 
         internal static readonly DiagnosticDescriptor SqlParameterNotFoundRule = new DiagnosticDescriptor(
             DiagnosticId,
