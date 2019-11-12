@@ -4,7 +4,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sql-analyzer-net&metric=alert_status)](https://sonarcloud.io/dashboard?id=sql-analyzer-net)
 [![codecov](https://codecov.io/gh/olsh/sql-analyzer-net/branch/master/graph/badge.svg)](https://codecov.io/gh/olsh/sql-analyzer-net)
 [![Nuget](https://img.shields.io/nuget/v/SqlAnalyzer.Net)](https://www.nuget.org/packages/SqlAnalyzer.Net/)
-[![Visual Studio Marketplace](https://img.shields.io/vscode-marketplace/v/olsh.sqlanalyzer.svg)](https://marketplace.visualstudio.com/items?itemName=olsh.sqlanalyzer)
+[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/olsh.sqlanalyzer?label=VS%20Market)](https://marketplace.visualstudio.com/items?itemName=olsh.sqlanalyzer)
 
 
 A Roslyn-based analyzer for SQL related stuff in .NET
