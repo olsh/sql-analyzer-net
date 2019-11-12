@@ -31,7 +31,7 @@ namespace SqlAnalyzer.Net
             DiagnosticSeverity.Warning,
             true,
             Description,
-            "https://github.com/olsh/sql-analyzer-net/rules/SQL005.md");
+            "https://github.com/olsh/sql-analyzer-net/blob/master/rules/SQL005.md");
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 
