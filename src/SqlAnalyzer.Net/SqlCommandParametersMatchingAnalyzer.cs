@@ -44,14 +44,10 @@ namespace SqlAnalyzer.Net
                 return;
             }
 
-            var methodDeclaration = invocationExpressionSyntax.FindMethodDeclaration();
-            if (methodDeclaration == null)
-            {
-                return;
-            }
+            var scope = localSymbol.GetVariableScope();
 
             var sqlCommandParametersWalker = new SqlCommandParametersWalker(localSymbol, context.SemanticModel);
-            sqlCommandParametersWalker.Visit(methodDeclaration.Body);
+            sqlCommandParametersWalker.Visit(scope);
 
             if (!sqlCommandParametersWalker.IsInlineSql || !sqlCommandParametersWalker.IsAllParametersStatic || string.IsNullOrEmpty(sqlCommandParametersWalker.SqlText))
             {

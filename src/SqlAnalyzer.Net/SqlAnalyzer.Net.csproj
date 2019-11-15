@@ -14,7 +14,7 @@
     <PackageReleaseNotes>https://github.com/olsh/sql-analyzer-net/releases</PackageReleaseNotes>
     <PackageTags>analyzers, sql, dapper</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/olsh/sql-analyzer-net</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/olsh/sql-analyzer-net/blob/master/LICENSE</PackageLicenseUrl>

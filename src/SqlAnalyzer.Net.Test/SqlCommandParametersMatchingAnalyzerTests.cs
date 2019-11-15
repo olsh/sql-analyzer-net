@@ -74,6 +74,14 @@ namespace SqlAnalyzer.Net.Test
             VerifyCSharpDiagnostic(code, expected);
         }
 
+        [TestMethod]
+        public void MultipleInlineSqlMatchedParameters_AnalyzerTriggered()
+        {
+            var code = ReadTestData("MultipleInlineSqlMatchedParameters.cs");
+
+            VerifyCSharpDiagnostic(code);
+        }
+
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
             return new SqlCommandParametersMatchingAnalyzer();
