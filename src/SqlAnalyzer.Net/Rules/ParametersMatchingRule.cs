@@ -4,7 +4,7 @@ using System.Linq;
 
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
-
+using SqlAnalyzer.Net.Models;
 using SqlAnalyzer.Net.Parsers;
 
 namespace SqlAnalyzer.Net.Rules
@@ -44,7 +44,8 @@ namespace SqlAnalyzer.Net.Rules
             string sqlText,
             ICollection<string> sharpParameters,
             Location location,
-            SyntaxNodeAnalysisContext context)
+            SyntaxNodeAnalysisContext context,
+            Orm orm)
         {
             if (string.IsNullOrEmpty(sqlText))
             {
@@ -57,7 +58,12 @@ namespace SqlAnalyzer.Net.Rules
             }
 
             const char SqlVariableDeclarationSymbol = '@';
-            var sqlVariables = SqlParser.FindParameters(sqlText).Select(v => v.Trim(SqlVariableDeclarationSymbol)).ToList();
+            var sqlVariables = SqlParser.FindParameters(sqlText).ToList();
+            if (orm == Orm.Dapper)
+            {
+                sqlVariables.AddRange(SqlParser.FindDapperLiterals(sqlText));
+            }
+
             sharpParameters = sharpParameters.Select(p => p.Trim(SqlVariableDeclarationSymbol)).ToList();
 
             foreach (var notFoundArgument in sqlVariables.Except(

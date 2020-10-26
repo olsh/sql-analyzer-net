@@ -8,6 +8,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 
 using SqlAnalyzer.Net.Extensions;
+using SqlAnalyzer.Net.Models;
 using SqlAnalyzer.Net.Rules;
 using SqlAnalyzer.Net.Walkers;
 
@@ -102,7 +103,7 @@ namespace SqlAnalyzer.Net
                 }
             }
 
-            ParametersMatchingRule.TryReportDiagnostics(sqlText, sharpParameters, invocationExpressionSyntax.GetLocation(), context);
+            ParametersMatchingRule.TryReportDiagnostics(sqlText, sharpParameters, invocationExpressionSyntax.GetLocation(), context, Orm.Dapper);
         }
     }
 }

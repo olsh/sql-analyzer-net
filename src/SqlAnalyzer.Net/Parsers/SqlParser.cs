@@ -11,6 +11,8 @@ namespace SqlAnalyzer.Net.Parsers
 
         private static readonly Regex SqlParameterRegex = new Regex(@"(?<!@)@(?<variable>\w+)", RegexOptions.Compiled);
 
+        private static readonly Regex SqlLiteralRegex = new Regex(@"{=(?<variable>\w+)}", RegexOptions.Compiled);
+
         private static readonly Regex SqlParameterAssignmentRegex = new Regex(@"@(?<declaration>\w+)\s*=\s*@", RegexOptions.Compiled);
 
         private static readonly Regex SingleLineComment = new Regex(@"--.*$", RegexOptions.Compiled | RegexOptions.Multiline);
@@ -48,6 +50,17 @@ namespace SqlAnalyzer.Net.Parsers
             sqlVariables.ExceptWith(declaredVariables);
 
             return sqlVariables;
+        }
+
+        public static ICollection<string> FindDapperLiterals(string sql)
+        {
+            var sqlLiterals = new HashSet<string>();
+            foreach (Match match in SqlLiteralRegex.Matches(sql))
+            {
+                sqlLiterals.Add(match.Groups["variable"].Value);
+            }
+
+            return sqlLiterals;
         }
     }
 }
